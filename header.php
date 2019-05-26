@@ -38,8 +38,8 @@
                     <a href="#" class="nav-link dropdown-toggle" 
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Conta</a>
                     <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item">Criar conta</a>
-                        <a href="#" class="dropdown-item">Fazer Login</a>
+                        <a href="cadastro.php" class="dropdown-item">Criar conta</a>
+                        <a href="login.php" class="dropdown-item">Fazer Login</a>
                     </div>
                 </li>
             </ul>
