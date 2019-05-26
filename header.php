@@ -20,22 +20,22 @@
         <div id="menu" class="collapse navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Mangás</a>
+                    <a href="mangas.php" class="nav-link">Mangás</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Animes</a>
+                    <a href="animes.php" class="nav-link">Animes</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Filmes</a>
+                    <a href="filmes.php" class="nav-link">Filmes</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">HQs</a>
+                    <a href="hqs.php" class="nav-link">HQs</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">LiveBook</a>
+                    <a href="livebook.php" class="nav-link">LiveBook</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" 
+                    <a class="nav-link dropdown-toggle" style="cursor:pointer;"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Conta</a>
                     <div class="dropdown-menu">
                         <a href="cadastro.php" class="dropdown-item">Criar conta</a>
