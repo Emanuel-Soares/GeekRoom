@@ -46,8 +46,12 @@
 
             <form class="form-inline ml-md-auto">
                 <div class="input-group">
-                    <input type="text" class="form-control input-group-prepend" placeholder="O que deseja buscar?">
-                    <input type="submit" class="btn btn-success input-group-append" value="Buscar">
+                    <div class="input-group-prepend">
+                        <input type="text" class="form-control" placeholder="O que deseja buscar?">
+                    </div>
+                    <div class="input-group-append">
+                            <input type="submit" class="btn btn-success input-group-append" value="Buscar">
+                    </div>
                 </div>
             </form>
 
