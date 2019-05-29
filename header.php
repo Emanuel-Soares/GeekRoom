@@ -42,6 +42,17 @@
                         <a href="login.php" class="dropdown-item">Fazer Login</a>
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" style="cursor:pointer;"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menus</a>
+                    <div class="dropdown-menu">
+                        <a href="menus.php><?php echo 'a'; ?>" class="dropdown-item">Animes</a>
+                        <a href="#" class="dropdown-item">Mangás</a>
+                        <a href="#" class="dropdown-item">Filmes</a>
+                        <a href="#" class="dropdown-item">HQs</a>
+                        <a href="#" class="dropdown-item">LiveBook</a>
+                    </div>
+                </li>
             </ul>
 
             <form class="form-inline ml-md-auto">
