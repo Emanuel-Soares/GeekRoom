@@ -1,3 +1,20 @@
+<?php 
+$link = new mysqli("127.0.0.1", "root", "", "cadastro");
+
+$email = function($mail = $_POST['email']) {
+    if(isset($mail)) {
+        $email = $_POST['email'];
+    } else {
+        $email = "";
+    }
+}
+
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
