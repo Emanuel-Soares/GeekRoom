@@ -1,18 +1,7 @@
-<?php 
-$link = new mysqli("127.0.0.1", "root", "", "cadastro");
+<?php
+include_once('conexao.php');
 
-$email = function($mail = $_POST['email']) {
-    if(isset($mail)) {
-        $email = $_POST['email'];
-    } else {
-        $email = "";
-    }
-}
-
-
-
-
-
+$username = $_SESSION['usr'];
 ?>
 
 <!DOCTYPE html>
@@ -57,17 +46,6 @@ $email = function($mail = $_POST['email']) {
                     <div class="dropdown-menu">
                         <a href="cadastro.php" class="dropdown-item">Criar conta</a>
                         <a href="login.php" class="dropdown-item">Fazer Login</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" style="cursor:pointer;"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menus</a>
-                    <div class="dropdown-menu">
-                        <a href="menus.php" class="dropdown-item">Animes</a>
-                        <a href="#" class="dropdown-item">Mangás</a>
-                        <a href="#" class="dropdown-item">Filmes</a>
-                        <a href="#" class="dropdown-item">HQs</a>
-                        <a href="#" class="dropdown-item">LiveBook</a>
                     </div>
                 </li>
             </ul>

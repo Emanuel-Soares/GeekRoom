@@ -5,9 +5,9 @@
             <h1 class="display-4">Cadastro</h1>
         </div>
     </div>
-    <form action="header.php" method="post">
+    <form action="login.php" method="post">
         <div class="form-group">
-            <label for="usr">Digite abaixo o seu nome: </label>
+            <label for="usr">Digite abaixo o seu username: </label>
             <input type="text" class="form-control" id="usr" name="usr" placeholder="Digite o seu nome de usuário">
         </div>
         <div class="form-group">
