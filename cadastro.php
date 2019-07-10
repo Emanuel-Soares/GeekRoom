@@ -1,5 +1,5 @@
 <?php 
-require_once('conexao.php');
+
 ?>
 
 <?php include 'header.php'; ?>
@@ -47,11 +47,26 @@ if(isset($_POST['nome'])) {
     $nome = addslashes($_POST['nome']);
     $senha = addslashes($_POST['senha']);
     $csenha = addslashes($_POST['csenha']);
-}
-if(!empty($username) && !empty($email) && !empty($nome) && !empty($senha) && !empty($csenha)) {
-    $c = new Conta;
-    $c->conectar();
-} else {
-    echo "Preencha todos os campos!";
+    if(!empty($username) && !empty($email) && !empty($nome) && !empty($senha) && !empty($csenha)) {
+        require_once('conexao.php');
+        $c = new Conta;
+        $c->conectar('cadastro', '127.0.0.1', 'root', '');
+        if($c->msgErro == "") {
+            if($senha === $csenha) {
+                if($c->cadastrar($username,$email,$nome,$senha)) {
+                    echo "Cadastrado com sucesso";
+                } else {
+                    echo "Email já cadastrado!";
+                }
+            } else {
+                echo "Senha e Confirmar Senha não correspondem";
+            }
+        }   
+        else {
+            echo "ERROR:". $c->msgErro;
+        }
+    } else {
+        echo "Preencha todos os campos!";
+    }
 }
 ?>

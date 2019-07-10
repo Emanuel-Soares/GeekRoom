@@ -1,6 +1,5 @@
 <?php
-
-class Contas {
+Class Contas {
     private $pdo;
     public $msgErro = "";
     public function conectar($host, $db, $usuario, $senha) {       
@@ -8,11 +7,11 @@ class Contas {
             global $pdo;
             $pdo = new PDO("mysql:dbname=$nome;host=$host", $usuario, $senha);
         } catch (PDOException $e) {
-            global $msgErro = $e->getMessage();
+            $msgErro = $e->getMessage();
         }
     }
 
-    public function cadastro($user, $email, $nome, $senha) {
+    public function cadastrar($user, $email, $nome, $senha) {
         global $pdo;
         $sql = $pdo->prepare("SELECT id FROM cadastro WHERE email = :e AND username = :u");
         $sql->bindValue(":e", $email);
@@ -24,7 +23,7 @@ class Contas {
             $sql = $pdo->prepare("INSERT INTO cadastro VALUES(DEFAULT, :u, :n, :s, :e)");
             $sql->bindValue(":u", $user);
             $sql->bindValue(":n", $nome);
-            $sql->bindValue(":s", $senha);
+            $sql->bindValue(":s", MD5($senha));
             $sql->bindValue(":e", $email);
             $sql->execute();
             return true;
@@ -34,7 +33,7 @@ class Contas {
     public function login($user, $senha) {
         global $pdo;
         $sql = $pdo->prepare("SELECT id FROM cadastro WHERE email = :e AND senha = :s");
-        $sql->bindValue(":s", $senha);
+        $sql->bindValue(":s", MD5($senha));
         $sql->bindValue(":e", $email);
         $sql->execute();
         if($sql->rowCount() > 0) {

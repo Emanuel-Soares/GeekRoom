@@ -1,9 +1,3 @@
-<?php
-include_once('conexao.php');
-
-$username = $_SESSION['usr'];
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
