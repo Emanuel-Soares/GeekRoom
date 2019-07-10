@@ -1,3 +1,7 @@
+<?php 
+require_once('conexao.php');
+?>
+
 <?php include 'header.php'; ?>
 <div class="container">
     <div class="row">
@@ -5,7 +9,7 @@
             <h1 class="display-4">Cadastro</h1>
         </div>
     </div>
-    <form action="login.php" method="post">
+    <form method="post">
         <div class="form-group">
             <label for="usr">Digite abaixo o seu username: </label>
             <input type="text" class="form-control" id="usr" name="usr" placeholder="Digite o seu nome de usuário">
@@ -35,3 +39,19 @@
         </div>
     </form>
 </div>
+
+<?php 
+if(isset($_POST['nome'])) {
+    $username = addslashes($_POST['usr']);
+    $email = addslashes($_POST['email']);
+    $nome = addslashes($_POST['nome']);
+    $senha = addslashes($_POST['senha']);
+    $csenha = addslashes($_POST['csenha']);
+}
+if(!empty($username) && !empty($email) && !empty($nome) && !empty($senha) && !empty($csenha)) {
+    $c = new Conta;
+    $c->conectar();
+} else {
+    echo "Preencha todos os campos!";
+}
+?>
