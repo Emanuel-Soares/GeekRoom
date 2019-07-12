@@ -1,7 +1,3 @@
-<?php 
-
-?>
-
 <?php include 'header.php'; ?>
 <div class="container">
     <div class="row">
@@ -20,7 +16,7 @@
         </div>
         <div class="form-group">
             <label for="nome">Digite abaixo o seu nome:</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Digite o seu nome">
+            <input type="text" class="form-control" id="name" name="nome" placeholder="Digite o seu nome">
         </div>
         <div class="form-group">
             <label for="senha">Digite abaixo a sua senha: </label>
@@ -40,32 +36,50 @@
     </form>
 </div>
 
-<?php 
-if(isset($_POST['nome'])) {
-    $username = addslashes($_POST['usr']);
+<?php
+require_once('conexao.php'); 
+
+$c = new Contas;
+
+if(isset($_POST['usr']) && isset($_POST['email']) && isset($_POST['nome']) && isset($_POST['senha']))
+{
+    $user = addslashes($_POST['usr']);
     $email = addslashes($_POST['email']);
     $nome = addslashes($_POST['nome']);
     $senha = addslashes($_POST['senha']);
     $csenha = addslashes($_POST['csenha']);
-    if(!empty($username) && !empty($email) && !empty($nome) && !empty($senha) && !empty($csenha)) {
-        require_once('conexao.php');
-        $c = new Conta;
-        $c->conectar('cadastro', '127.0.0.1', 'root', '');
-        if($c->msgErro == "") {
-            if($senha === $csenha) {
-                if($c->cadastrar($username,$email,$nome,$senha)) {
-                    echo "Cadastrado com sucesso";
-                } else {
-                    echo "Email já cadastrado!";
+    if(!empty($nome) && !empty($email) && !empty($nome) && !empty($senha) && !empty($csenha))
+    {
+        $c->conectar('geekroom', '127.0.0.1' ,'root', '');
+        if($c->msgErro == "")
+        {
+            if($senha == $csenha)
+            {
+                if($c->cadastrar($user, $nome, $senha, $email))
+                {
+                    ?>
+                    <div>Cadastrado com sucesso</div>
+                    <?php   
                 }
-            } else {
-                echo "Senha e Confirmar Senha não correspondem";
+                else
+                {
+                    ?>
+                    <div>Se fudeu</div>
+                    <?php
+                }
             }
-        }   
-        else {
-            echo "ERROR:". $c->msgErro;
+            else
+            {
+                echo "Senha e confirmar Senha não correspondem!";
+            }
         }
-    } else {
+        else
+        {
+            echo "ERRO:". $c->msgErro;
+        }
+    }
+    else
+    {
         echo "Preencha todos os campos!";
     }
 }

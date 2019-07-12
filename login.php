@@ -8,11 +8,11 @@
     <form action="login.php" method="post">
         <div class="form-group">
             <label for="user">Digite o seu username ou e-mail: </label>
-            <input type="text" class="form-control" id="user" name="user">
+            <input type="text" class="form-control" id="user" name="email">
         </div>
         <div class="form-group">
             <label for="senha">Digite sua senha: </label>
-            <input type="text" class="form-control" id="senha" name="sen">
+            <input type="text" class="form-control" id="senha" name="senha">
         </div>
         <div class="row">
             <div class="col text-center">
@@ -21,3 +21,36 @@
         </div>
     </form>
 </div>
+
+<?php 
+require_once('conexao.php');
+$c = new Contas;
+if(isset($_POST['email']) && isset($_POST['senha']))
+{
+    $email = addslashes($_POST['email']);
+    $senha = addslashes($_POST['senha']);
+    if(!empty($email) && !empty($senha))
+    {
+        $c->conectar('geekroom', '127.0.0.1' ,'root', '');
+        if($c->msgErro == "")
+        {
+            if($c->logar($email, $senha))
+            {
+                header('location: index.php');
+            }   
+            else
+            {
+                echo "Email e/ou Senha estão incorretos";
+            }
+        }
+        else
+        {
+            echo "ERRO:". $c->msgErro;
+        }
+    }
+    else
+    {
+        echo "preencha todos os campos!";
+    }
+}
+?>

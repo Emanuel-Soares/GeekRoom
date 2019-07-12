@@ -1,0 +1,33 @@
+.card-lanc {
+    background-color: rgba(0,0,0,0);
+}
+
+.card-lanc:hover{
+    background-color: rgba(0,0,0,.7);
+    transition: 0.5s linear;
+}
+
+.card-lanc p {
+    display:none;
+}
+
+.card-lanc:hover p {
+    display:block;
+}
+
+h2.h2 {
+    font-size:20pt;
+    padding-top:10px;
+    padding-bottom:0px;
+}
+.table-mang {
+    overflow: auto;
+}
+
+a.abc {
+    margin-left: -25%;
+}
+
+a.a {
+    margin-left: 0;
+}
