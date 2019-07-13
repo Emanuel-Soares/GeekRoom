@@ -1,4 +1,6 @@
 <?php include 'header.php'; ?>
+<div class="alert alert-success alert-s" style="width:100%;margin-bottom:100px;display:none;" role="alert">Cadastrado com sucesso!</div>
+<div class="alert alert-warning alert-w" style="width:100%;margin-bottom:100px;display:none;" role="alert">Conta já cadastrada</div>
 <div class="container">
     <div class="row">
         <div class="col text-center">
@@ -8,23 +10,23 @@
     <form method="post">
         <div class="form-group">
             <label for="usr">Digite abaixo o seu username: </label>
-            <input type="text" class="form-control" id="usr" name="usr" placeholder="Digite o seu nome de usuário">
+            <input type="text" required class="form-control" id="usr" name="usr" placeholder="Digite o seu nome de usuário">
         </div>
         <div class="form-group">
             <label for="email">Digite abaixo o seu e-mail: </label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Digite o seu e-mail">
+            <input type="email" required class="form-control" id="email" name="email" placeholder="Digite o seu e-mail" onkeyup="this.value = this.value.toLowerCase()">
         </div>
         <div class="form-group">
             <label for="nome">Digite abaixo o seu nome:</label>
-            <input type="text" class="form-control" id="name" name="nome" placeholder="Digite o seu nome">
+            <input type="text" required class="form-control" id="name" name="nome" placeholder="Digite o seu nome" onkeyup="this.value = this.value.toUpperCase()">
         </div>
         <div class="form-group">
             <label for="senha">Digite abaixo a sua senha: </label>
-            <input type="text" class="form-control" id="senha" name="senha" placeholder="Digite sua senha">
+            <input type="password" required class="form-control" id="senha" name="senha" placeholder="Digite sua senha">
         </div>
         <div class="form-group">
             <label for="csenha">Confirme a sua senha: </label>
-            <input type="text" class="form-control" id="csenha" name="csenha" placeholder="Confirme sua senha">
+            <input type="password" required class="form-control" id="csenha" name="csenha" placeholder="Confirme sua senha">
         </div>
         <div class="form-group">
             <div class="row">
@@ -43,7 +45,7 @@ $c = new Contas;
 
 if(isset($_POST['usr']) && isset($_POST['email']) && isset($_POST['nome']) && isset($_POST['senha']))
 {
-    $user = addslashes($_POST['usr']);
+    $user = $_POST['usr'];
     $email = addslashes($_POST['email']);
     $nome = addslashes($_POST['nome']);
     $senha = addslashes($_POST['senha']);
@@ -58,13 +60,17 @@ if(isset($_POST['usr']) && isset($_POST['email']) && isset($_POST['nome']) && is
                 if($c->cadastrar($user, $nome, $senha, $email))
                 {
                     ?>
-                    <div>Cadastrado com sucesso</div>
+                    <script>
+                        $("div.alert-s").css('display', 'block')
+                    </script>
                     <?php   
                 }
                 else
                 {
                     ?>
-                    <div>Se fudeu</div>
+                    <script>
+                        $('div.alert-w').css('display', 'block')
+                    </script>
                     <?php
                 }
             }

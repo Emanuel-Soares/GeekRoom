@@ -1,4 +1,5 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php';?>
+<div class="alert alert-warning alert-w2" style="width:100%;margin-bottom:100px;display:none;" role="alert">Preencha todos os campos!</div>
 <div class="container">
     <div class="row">
         <div class="col text-center">
@@ -12,7 +13,7 @@
         </div>
         <div class="form-group">
             <label for="senha">Digite sua senha: </label>
-            <input type="text" class="form-control" id="senha" name="senha">
+            <input type="password" class="form-control" id="senha" name="senha">
         </div>
         <div class="row">
             <div class="col text-center">
@@ -40,7 +41,7 @@ if(isset($_POST['email']) && isset($_POST['senha']))
             }   
             else
             {
-                echo "Email e/ou Senha estão incorretos";
+                echo 'Nome Email e/ou Senha estão Incorretos!';
             }
         }
         else
@@ -50,7 +51,11 @@ if(isset($_POST['email']) && isset($_POST['senha']))
     }
     else
     {
-        echo "preencha todos os campos!";
+        ?>
+        <script>
+            $("div.alert-w2").css('display', 'block')
+        </script>
+        <?php
     }
 }
 ?>

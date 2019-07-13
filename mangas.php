@@ -7,13 +7,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://leviatanscans.com/storage/carousel/Z0slfqCG2Of3hLj21h2xrux8pRg0gRd801SinJZW.jpeg" style="height:400px;" class="d-block w-100" alt="...">
+      <img src="imagens/returners_magic.jpeg" style="height:400px;" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://leviatanscans.com/storage/carousel/MSgeXFO5EanidZcZLEYwV0HnK7mXBar8B5tZfTkI.jpeg" class="d-block w-100" style="height:400px;" alt="...">
+      <img src="imagens/sorcerer_king.jpeg" class="d-block w-100" style="height:400px;" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/97735551-1fae-46a0-a594-095d60705833/dczjbu7-cc3c6d8f-27b6-4040-b12d-ce91ef2e8cab.jpg/v1/fill/w_1192,h_670,q_70,strp/solo_leveler_v1s1_3840x2160_by_wingsofwar_dczjbu7-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjE2MCIsInBhdGgiOiJcL2ZcLzk3NzM1NTUxLTFmYWUtNDZhMC1hNTk0LTA5NWQ2MDcwNTgzM1wvZGN6amJ1Ny1jYzNjNmQ4Zi0yN2I2LTQwNDAtYjEyZC1jZTkxZWYyZThjYWIuanBnIiwid2lkdGgiOiI8PTM4NDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.OuGPeskYCmegsML2cd3dw3B_5FbTfv8WWDpXcVrtvtk" class="d-block w-100" style="height:400px;" alt="...">
+      <img src="imagens/solo_leveling.jpg" class="d-block w-100" style="height:400px;" alt="...">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

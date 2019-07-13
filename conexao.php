@@ -1,5 +1,5 @@
 <?php
-class Contas {
+Class Contas {
     
     private $pdo;
     public $msgErro = "";
@@ -21,7 +21,7 @@ class Contas {
         if($sql->rowCount() > 0) {
             return false;
         } else {
-            $sql = $pdo->prepare("INSERT INTO cadastro VALUES (DEFAULT, :u, :n, :s, :e)");
+            $sql = $pdo->prepare("INSERT INTO cadastro VALUES (DEFAULT, :u, :n, :s, :e, DEFAULT, DEFAULT)");
             $sql->bindValue(":u",$user);
             $sql->bindValue(":n",$nome);
             $sql->bindValue(":s",MD5($senha));
@@ -31,10 +31,10 @@ class Contas {
         }
     }
 
-    public function logar($emailSenha, $senha) {
+    public function logar($emailUser, $senha) {
         global $pdo;
-        $sql = $pdo->prepare("SELECT id, username FROM cadastro WHERE (email = :eu OR username = :eu) AND senha = :s");
-        $sql->bindValue(":eu",$emailSenha);        
+        $sql = $pdo->prepare("SELECT * FROM cadastro WHERE (email = :eu OR username = :eu) AND senha = :s");
+        $sql->bindValue(":eu",$emailUser);        
         $sql->bindValue(":s",MD5($senha));
         $sql->execute();
         if($sql->rowCount() > 0) {
@@ -42,10 +42,37 @@ class Contas {
             session_start();
             $_SESSION['id'] = $dado['id'];
             $_SESSION['user'] = $dado['username'];
+            $_SESSION['ranking'] = $dado['ranking'];
             return true;
         } else {
             return false;
         }
     }
+
+    public function sair($user, $ranking) {
+        global $pdo;
+        $sql = $pdo->prepare("SELECT * FROM login WHERE username = :u AND ranking = :r");
+        $sql->bindValue(":u", $user);
+        $sql->bindValue(":r", $ranking);
+        $sql->execute();
+        if($sql->rowCount() > 0)
+        {
+            $dado = $sql->fetch();
+            $nsql = $pdo->prepare("UPDATE login SET acessos = acessos + 1 WHERE username = :u AND ranking = :r");
+            $nsql->bindValue(":u", $user);
+            $nsql->bindValue(":r", $ranking);
+            $nsql->execute();
+            return true;
+        }
+        else
+        {
+            $nsql = $pdo->prepare("INSERT INTO login VALUES (acessos + 1, :u, :r)");
+            $nsql->bindValue(":u", $user);
+            $nsql->bindValue(":r", $ranking);
+            $nsql->execute();
+            return false;
+        }
+    }
+
 }
 ?>
