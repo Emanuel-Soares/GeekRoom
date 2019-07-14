@@ -15,6 +15,9 @@ Class Contas {
 
     public function cadastrar($user, $nome, $senha, $email) {
         global $pdo;
+        if($user == null || $user == " " || $user == "  " || $user == "   " || $user == "    ") {
+            return false;
+        }
         $sql = $pdo->prepare("SELECT id FROM cadastro WHERE email = :e");
         $sql->bindValue(":e", $email);
         $sql->execute();
@@ -57,7 +60,6 @@ Class Contas {
         $sql->execute();
         if($sql->rowCount() > 0)
         {
-            $dado = $sql->fetch();
             $nsql = $pdo->prepare("UPDATE login SET acessos = acessos + 1 WHERE username = :u AND ranking = :r");
             $nsql->bindValue(":u", $user);
             $nsql->bindValue(":r", $ranking);
@@ -71,6 +73,115 @@ Class Contas {
             $nsql->bindValue(":r", $ranking);
             $nsql->execute();
             return false;
+        }
+    }
+
+    // Administração
+
+    public function add($titulo, $caps, $table, $capitulos) {
+        global $pdo;
+        $sql = $pdo->prepare("SELECT * FROM $table WHERE titulo = :t");
+        $sql->bindValue(":t", $titulo);
+        $sql->execute();
+        if($sql->rowCount() > 0)
+        {
+            return false;
+        }
+        else
+        {
+            $nsql = $pdo->prepare("INSERT INTO $table (id, titulo, $capitulos) VALUES (DEFAULT, :t, :c)");
+            $nsql->bindValue(":t", $titulo);
+            $nsql->bindValue(":c", $caps);
+            $nsql->execute();
+            return true;
+        }
+    }
+
+    public function alter($titulo, $caps, $table, $capitulos) {
+        global $pdo;
+        $sql = $pdo->prepare("SELECT id FROM $table WHERE titulo = :t");
+        $sql->bindValue(":t", $titulo);
+        $sql->execute();
+        if($sql->rowCount() > 0)
+        {
+            $dado = $sql->fetch();
+            $nsql = $pdo->prepare("UPDATE $table SET $capitulos = :c WHERE titulo = :t");
+            $nsql->bindValue(":t", $titulo);
+            $nsql->bindValue(":c", $caps);
+            $nsql->execute();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public function condAddC($titulo, $caps, $table, $capitulos, $tab, $addTab, $w) {
+        if(!empty($titulo) && !empty($caps))
+        {
+            $this->conectar('geekroom', '127.0.0.1', 'root', '');
+            if($this->msgErro == "")
+            {
+                if($this->add($titulo, $caps, $table, $capitulos)){
+                    ?>
+                    <script>
+                        $("<?php echo '.'.$tab; ?>").addClass('tab-hide');
+                        $("<?php echo '.'.$addTab; ?>").removeClass('tab-hide');            
+                    </script>
+                    <?php
+                }
+                else
+                {
+                    ?>
+                    <script>
+                        $('div.alert-w<?php echo $w ?>').css('display', 'block')
+                    </script>
+                    <?php
+                }
+            }
+            else
+            {
+                echo "ERRO:". $this->msgErro;
+            }
+        }
+        else
+        {
+            echo 'Preencha todos os campos';
+        }
+    }
+
+    public function condAltC($titulo, $caps, $table, $capitulos, $tab, $alterTab) {
+        if(!empty($titulo) && !empty($caps))
+        {
+            $this->conectar('geekroom', '127.0.0.1', 'root', '');
+            if($this->msgErro == "")
+            {
+                if($this->alter($titulo, $caps, $table, $capitulos)){
+                    ?>
+                    <script>
+                        $("<?php echo '.'.$tab; ?>").addClass('tab-hide');
+                        $("<?php echo '.'.$alterTab; ?>").removeClass('tab-hide');            
+                    </script>
+                    <?php
+                }
+                else
+                {
+                    ?>
+                    <script>
+                        $('div.alert-w7').css('display', 'block');
+                    </script>
+                    <?php
+                }
+            }
+            else
+            {
+                echo "ERRO:". $this->msgErro;
+            }
+        }
+        else
+        {
+            echo 'Preencha todos os campos';
         }
     }
 

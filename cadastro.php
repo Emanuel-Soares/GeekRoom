@@ -57,6 +57,9 @@ if(isset($_POST['usr']) && isset($_POST['email']) && isset($_POST['nome']) && is
         {
             if($senha == $csenha)
             {
+                if($user == "Conta") {
+                    $user = null;
+                }
                 if($c->cadastrar($user, $nome, $senha, $email))
                 {
                     ?>
