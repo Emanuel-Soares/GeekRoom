@@ -32,7 +32,7 @@ if(isset($_POST['email']) && isset($_POST['senha']))
     $senha = addslashes($_POST['senha']);
     if(!empty($email) && !empty($senha))
     {
-        $c->conectar('geekroom', '127.0.0.1' ,'root', '');
+        $c->conectarPdo('geekroom', '127.0.0.1' ,'root', '');
         if($c->msgErro == "")
         {
             if($c->logar($email, $senha))

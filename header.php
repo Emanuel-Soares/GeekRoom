@@ -13,7 +13,7 @@
     require_once('conexao.php');
     $s = new Contas;
     if(isset($_POST['sair'])) {    
-        $s->conectar('geekroom', '127.0.0.1', 'root', '');
+        $s->conectarPdo('geekroom', '127.0.0.1', 'root', '');
         if($ranking != "")
         {
             $s->sair($username, $ranking);
@@ -46,7 +46,7 @@
         <div id="menu" class="collapse navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                    <?php $s->conectar('geekroom', '127.0.0.1', 'root', '');
+                    <?php $s->conectarPdo('geekroom', '127.0.0.1', 'root', '');
                          if($username != 'Conta') { ?>                    
                         <a href="novel.php" class="nav-link dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Novels</a>

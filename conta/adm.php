@@ -11,12 +11,11 @@
     }
     .tab-hide{
         display: none;
-    }  
+    }
+    .tr {
+        display: none;
+    }
 </style>
-
-
-
-
 
 <div class="container-fluid">
     <div class="row">
@@ -56,7 +55,7 @@
                     <img src="../imagens/plus-2x.png">
                 </button>
             </form><br><hr>
-            <h2 class="lead text-center h2">Alterar</h2>
+            <h2 class="lead text-center h2" style="margin-top:-20px;">Alterar</h2>
             <form method="post">
                 <label for="alt-novel" class="lead float-left">Alterar Novel</label>
                 <button value="alt-novel" name="alt-novel" id="alt-novel" class="btn btn-success btn-circle float-right">
@@ -86,13 +85,7 @@
                 <button value="alt-hq" name="alt-hq" id="alt-hq" class="btn btn-success btn-circle float-right">
                     <img src="../imagens/pencil-2x.png">
                 </button>
-            </form><br><hr>
-            <form method="post">
-                <label for="create-table" class="lead float-left">Criar Tabela</label>
-                <button value="create-table" name="create-table" id="create-table" class="btn btn-success btn-circle float-right">
-                    <img src="../imagens/plus-2x.png">
-                </button>
-            </form><br>
+            </form>
         </div>
         <div class="col-6 bg-light">
             <div class="alert alert-warning alert-w2" style="width:100%;display:none;" role="alert">Mangá já cadastrado!</div>
@@ -110,12 +103,27 @@
                                 <input type="text" name="nome-tabela" class="form-control">
                             </th>
                             <th>
-                                <button class="btn btn-success btn-circle">
+                                <button value="btn-nome-tabela" name="btn-nome-tabela" class="btn btn-success btn-circle">
                                     <img src="../imagens/plus-2x.png">
                                 </button>
                             </th>
                         </tr>
                     </thead>
+                </table>
+                <table class="table table-striped table-hover text-center tab-table tab-hide">
+                    <thead>
+                        <tr>
+                            <th>k</th>
+                            <th>k</th>
+                            <th>k</th>
+                            <th>k</th>
+                            <th>k</th>
+                            <th>k</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php  ?>
+                    </tbody>
                 </table>
                 <table class="table table-striped table-hover tab-hide tab-novel text-center">
                     <thead>
@@ -424,22 +432,128 @@
             </table>
         </div>
         <div class="col-3 bg-light border-left">
-            <table class="table table-striped table-hover text-center tab-mangas">
+            <table class="table table-striped table-hover text-center tab-novels tab-hide">
+                    <tbody>
+                        <?php if(isset($_POST['btn-add-novel']) || isset($_POST['btn-alter-novel']) || isset($_POST['add-novel']) || isset($_POST['alt-novel'])) {
+                            require('adm_help.php');
+                            while($dado = $con->fetch_array()) { ?>
+                                <tr class="tr-show" style="cursor:pointer;">
+                                    <th scope="row">Título</th>
+                                    <td><?php echo $dado['titulo'];?></td>
+                                </tr>
+                                <tr class="tr">
+                                    <th scope="row">ID</th>
+                                    <td><?php echo $dado['id']; ?></td>
+                                </tr>
+                                <tr class="tr">
+                                    <th scope="row">Capítulos</th>
+                                    <td><?php echo $dado['capitulos']; ?></td>
+                                </tr>
+                                <tr class="tr">
+                                    <th scope="row">Assinaturas</th>
+                                    <td><?php echo $dado['assinaturas']; ?></td>
+                                </tr>
+                                <tr class="tr">
+                                    <th scope="row">Lido</th>
+                                    <td><?php echo $dado['lido']; ?></td>
+                                </tr>
+                                <tr class="tr">
+                                    <th scope="row">Notas</th>
+                                    <td><?php echo $dado['notas']; ?></td>
+                                </tr>
+                                <tr class="tr">
+                                    <th scope="row">Valor das Notas</th>
+                                    <td><?php echo $dado['vnotas']; ?></td>
+                                </tr>
+                                <tr class="tr">
+                                    <th scope="row">Média das Notas</th>
+                                    <td><?php echo $dado['mnotas']; ?></td>
+                                </tr>
+                        <?php }} ?>
+                    </tbody>
+            </table>
+            <table class="table table-striped table-hover text-center tab-mangas tab-hide">
                 <thead>
                     <tr>
-                        <th>Mangá</th>
-                        <th>Nome</th>
                         <th>ID</th>
-                        <th>Ranking</th>
+                        <th>Título</th>
+                        <th>Capítulo</th>
                     </tr>
                 </thead>
                 <tbody>
-
+                    <?php if(isset($_POST['btn-add-manga']) || isset($_POST['btn-alter-manga']) || isset($_POST['add-manga']) || isset($_POST['alt-manga'])) {
+                        require('adm_help.php');
+                        while($dado = $con->fetch_array()) { ?>
+                        <tr>
+                            <td><?php echo $dado['id']; ?></td>
+                            <td><?php echo $dado['titulo']; ?></td>
+                            <td><?php echo $dado['capitulos']; ?></td>
+                        </tr>
+                    <?php }} ?>
+                </tbody>
+            </table>
+            <table class="table table-striped table-hover text-center tab-animes tab-hide">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Episódio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if(isset($_POST['btn-add-anime']) || isset($_POST['btn-alter-anime']) || isset($_POST['add-anime']) || isset($_POST['alt-anime'])) {
+                        require('adm_help.php');
+                        while($dado = $con->fetch_array()) { ?>
+                        <tr>
+                            <td><?php echo $dado['id']; ?></td>
+                            <td><?php echo $dado['titulo']; ?></td>
+                            <td><?php echo $dado['episodios']; ?></td>
+                        </tr>
+                    <?php }} ?>
+                </tbody>
+            </table>
+            <table class="table table-striped table-hover text-center tab-filmes tab-hide">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Parte</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if(isset($_POST['btn-add-filme']) || isset($_POST['btn-alter-filme']) || isset($_POST['add-filme']) || isset($_POST['alt-filme'])) {
+                        require('adm_help.php');
+                        while($dado = $con->fetch_array()) { ?>
+                        <tr>
+                            <td><?php echo $dado['id']; ?></td>
+                            <td><?php echo $dado['titulo']; ?></td>
+                            <td><?php echo $dado['partes']; ?></td>
+                        </tr>
+                    <?php }} ?>
+                </tbody>
+            </table>
+            <table class="table table-striped table-hover text-center tab-hqs tab-hide">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Capítulo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if(isset($_POST['btn-add-hq']) || isset($_POST['btn-alter-hq']) || isset($_POST['add-hq']) || isset($_POST['alt-hq'])) {
+                        require('adm_help.php');
+                        while($dado = $con->fetch_array()) { ?>
+                        <tr>
+                            <td><?php echo $dado['id']; ?></td>
+                            <td><?php echo $dado['titulo']; ?></td>
+                            <td><?php echo $dado['capitulos']; ?></td>
+                        </tr>
+                    <?php }} ?>
                 </tbody>
             </table>
         </div>
     </div>
-</div>
 <?php include '../footer.php'; ?>
 <?php if(isset($_POST['add-novel'])) {?><script>$('table.tab-novel').removeClass('tab-hide')</script><?php } ?>
 <?php if(isset($_POST['add-manga'])) {?><script>$('table.tab-manga').removeClass('tab-hide')</script><?php } ?>
@@ -453,4 +567,21 @@
 <?php if(isset($_POST['alt-filme'])) {?><script>$('table.tab-filme').removeClass('tab-hide')</script><?php } ?>
 <?php if(isset($_POST['alt-hq'])) {?><script>$('table.tab-hq').removeClass('tab-hide')</script><?php } ?>
 
-<?php if(isset($_POST['create-table'])) {?><script>$('table.create-table').removeClass('tab-hide')</script><?php } ?>
+<script>
+    let clicks = 0;
+    $('.tab-novels').ready(function() {
+        $('.tr').css('display', 'none')
+    })
+    $('.tr-show').click(function() {
+        if(clicks % 2 == 0)
+        {
+            $('tr').css('display', 'block')
+            clicks++   
+        }
+        else
+        {
+            $('.tr').css('display', 'none')
+            clicks++
+        }
+    })
+</script>

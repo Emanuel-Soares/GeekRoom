@@ -2,15 +2,46 @@
 Class Contas {
     
     private $pdo;
+    private $mysqli;
     public $msgErro = "";
 
-    public function conectar($db, $host, $user, $pass) {
+    public function conectarPdo($db, $host, $user, $pass) {
         global $pdo;
         try {
         $pdo = new PDO('mysql:dbname='.$db.';host='.$host, $user, $pass);
         } catch(PDOException $e) {
             $msgErro = $e->getMessage();
         }
+    }
+
+    public function conectarMysqli($host, $user, $senha, $db) {
+        global $mysqli;
+        $mysqli = new mysqli($host, $user, $senha, $db);
+        if (!$mysqli) {
+            echo strtoupper("Error: Unable to connect to MySQL.") . PHP_EOL;
+            echo strtoupper("Debugging error: ") . mysqli_connect_errno() . PHP_EOL;
+            echo strtoupper("Debugging error: ") . mysqli_connect_error() . PHP_EOL;
+            exit;
+        }
+    }
+
+    public function pegarValores($tabela) {
+        global $mysqli;
+        $consulta = "SELECT * FROM $tabela";
+        $con = $mysqli->query($consulta);
+        return $con;
+        $consulta = null;
+        $con = null;
+    }
+
+    public function filtrarValores($tabela, $titulo) {
+        global $pdo;
+        $sql = $pdo->prepare("SELECT * FROM $tabela WHERE titulo = :t");
+        $sql->bindValue(":t", $titulo);
+        $sql->execute();
+        return $sql;
+        $consulta = null;
+        $con = null;
     }
 
     public function cadastrar($user, $nome, $senha, $email) {
@@ -120,7 +151,7 @@ Class Contas {
     public function condAddC($titulo, $caps, $table, $capitulos, $tab, $addTab, $w) {
         if(!empty($titulo) && !empty($caps))
         {
-            $this->conectar('geekroom', '127.0.0.1', 'root', '');
+            $this->conectarPdo('geekroom', '127.0.0.1', 'root', '');
             if($this->msgErro == "")
             {
                 if($this->add($titulo, $caps, $table, $capitulos)){
@@ -154,7 +185,7 @@ Class Contas {
     public function condAltC($titulo, $caps, $table, $capitulos, $tab, $alterTab) {
         if(!empty($titulo) && !empty($caps))
         {
-            $this->conectar('geekroom', '127.0.0.1', 'root', '');
+            $this->conectarPdo('geekroom', '127.0.0.1', 'root', '');
             if($this->msgErro == "")
             {
                 if($this->alter($titulo, $caps, $table, $capitulos)){
