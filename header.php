@@ -25,13 +25,13 @@
 
 <style>
 .bg-darkgray {
-    background-color: #151515;
+    background-color: #151515 !important;
 }
 .bg-darkgray-2 {
-    background-color: #181818;
+    background-color: #181818 !important;
 }
 .white {
-    color: #fff;
+    color: #fff !important;
 }
 .dropdown-item:hover {
     background-color: #e0f2f1 !important;
