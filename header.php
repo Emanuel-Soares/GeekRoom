@@ -23,6 +23,18 @@
     }
 ?>
 
+<style>
+.bg-darkgray {
+    background-color: #151515;
+}
+.bg-darkgray-2 {
+    background-color: #181818;
+}
+.white {
+    color: #fff;
+}
+</style>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -37,7 +49,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-darkgray-2 sticky-top">
         <a href="index.php" class="navbar-brand">GeekRoom</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
             <span class="navbar-toggler-icon"></span>

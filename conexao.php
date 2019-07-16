@@ -25,14 +25,22 @@ Class Contas {
         }
     }
 
-    public function pegarValores($tabela) {
+    public function pesquisar($p, $tabela)
+    {   
         global $mysqli;
-        $consulta = "SELECT * FROM $tabela";
+        $consulta = "SELECT titulo FROM $tabela WHERE titulo LIKE '%$p%'";
         $con = $mysqli->query($consulta);
         return $con;
-        $consulta = null;
-        $con = null;
     }
+
+     public function pegarValores($tabela) {
+         global $mysqli;
+         $consulta = "SELECT * FROM $tabela";
+         $con = $mysqli->query($consulta);
+         return $con;
+         $consulta = null;
+         $con = null;
+     }
 
     public function filtrarValores($tabela, $titulo) {
         global $pdo;

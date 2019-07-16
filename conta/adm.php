@@ -1,25 +1,31 @@
 <?php include 'header.php'; ?>
 <style>
-    .btn-circle {
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        padding: 6px 0;
-        font-size: 12px;
-        line-height: 1.428571429;
-        border-radius: 15px;
-    }
-    .tab-hide{
-        display: none;
-    }
-    .tr {
-        display: none;
-    }
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+.tab-hide{
+    display: none;
+}
+.tr {
+    display: none;
+}
+.bg-darkgray {
+    background-color: #151515;
+}
+.white {
+    color: #fff;
+}
 </style>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-3 bg-light border-right">
+        <div class="col-3 border-right bg-light">
             <h2 class="lead text-center h2">Adicionar</h2>
             <form method="post" style="margin-top:10px;">
                 <label class="lead float-left" for="add-novel">Adicionar Novel</label>   
@@ -85,6 +91,37 @@
                 <button value="alt-hq" name="alt-hq" id="alt-hq" class="btn btn-success btn-circle float-right">
                     <img src="../imagens/pencil-2x.png">
                 </button>
+            </form><br><hr>
+            <h2 class="lead text-center h2" style="margin-top:-20px;">Enviar</h2>
+            <form method="post">
+                <label for="env-filme" class="lead float-left">Enviar Novel</label>
+                <button value="env-filme" name="env-filme" id="env-filme" class="btn btn-success btn-circle float-right">
+                    <img src="../imagens/check-2x.png">
+                </button>
+            </form><br><br>
+            <form method="post">
+                <label for="env-hq" class="lead float-left">Enviar Mangá</label>
+                <button value="env-hq" name="env-hq" id="env-hq" class="btn btn-success btn-circle float-right">
+                    <img src="../imagens/check-2x.png">
+                </button>
+            </form><br><br>
+            <form method="post">
+                <label for="env-filme" class="lead float-left">Enviar Anime</label>
+                <button value="env-filme" name="env-filme" id="env-filme" class="btn btn-success btn-circle float-right">
+                    <img src="../imagens/check-2x.png">
+                </button>
+            </form><br><br>
+            <form method="post">
+                <label for="env-hq" class="lead float-left">Enviar Filme</label>
+                <button value="env-hq" name="env-hq" id="env-hq" class="btn btn-success btn-circle float-right">
+                    <img src="../imagens/check-2x.png">
+                </button>
+            </form><br><br>
+            <form method="post">
+                <label for="env-filme" class="lead float-left">Enviar HQ</label>
+                <button value="env-filme" name="env-filme" id="env-filme" class="btn btn-success btn-circle float-right">
+                    <img src="../imagens/check-2x.png">
+                </button>
             </form>
         </div>
         <div class="col-6 bg-light">
@@ -95,37 +132,7 @@
             <div class="alert alert-warning alert-w6" style="width:100%;display:none;" role="alert">HQ já cadastrada!</div>
             <div class="alert alert-warning alert-w7" style="width:100%;display:none;" role="alert">Tabela não Existe!</div>
             <form method="post">
-                <table class="table table-striped table-hover text-center create-table tab-hide">
-                    <thead>
-                        <tr>
-                            <th>Nome:</th>
-                            <th>
-                                <input type="text" name="nome-tabela" class="form-control">
-                            </th>
-                            <th>
-                                <button value="btn-nome-tabela" name="btn-nome-tabela" class="btn btn-success btn-circle">
-                                    <img src="../imagens/plus-2x.png">
-                                </button>
-                            </th>
-                        </tr>
-                    </thead>
-                </table>
-                <table class="table table-striped table-hover text-center tab-table tab-hide">
-                    <thead>
-                        <tr>
-                            <th>k</th>
-                            <th>k</th>
-                            <th>k</th>
-                            <th>k</th>
-                            <th>k</th>
-                            <th>k</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php  ?>
-                    </tbody>
-                </table>
-                <table class="table table-striped table-hover tab-hide tab-novel text-center">
+                <table class="table table-striped table-hover tab-hide tab-novel tab-manga tab-anime tab-filme tab-hq text-center">
                     <thead>
                         <tr>
                             <th>Título</th>
@@ -134,107 +141,79 @@
                     </thead>
                     <tbody>
                         <tr>
+                            <?php if(isset($_POST['add-novel']) || isset($_POST['alt-novel'])) { ?>
+                                <td>
+                                    <input type="text" class="form-control text-center" id="titulo-novel" name="titulo-novel">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control text-center" id="caps-novel" name="caps-novel">
+                                </td>
+                            <?php } else if(isset($_POST['add-manga']) || isset($_POST['alt-manga'])) { ?>
+                                <td>
+                                    <input type="text" class="form-control text-center" id="titulo-manga" name="titulo-manga">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control text-center" id="caps-manga" name="caps-manga">
+                                </td>
+                            <?php } else if(isset($_POST['add-anime']) || isset($_POST['alt-anime'])) { ?>
+                                <td>
+                                    <input type="text" class="form-control text-center" id="titulo-anime" name="titulo-anime">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control text-center" id="caps-anime" name="caps-anime">
+                                </td>
+                            <?php } else if(isset($_POST['add-filme']) || isset($_POST['alt-filme'])) { ?>
+                                <td>
+                                    <input type="text" class="form-control text-center" id="titulo-filme" name="titulo-filme">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control text-center" id="caps-filme" name="caps-filme">
+                                </td>
                             <td>
-                                <input type="text" class="form-control text-center" id="titulo-novel" name="titulo-novel">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control text-center" id="caps-novel" name="caps-novel">
-                            </td>
-                            <td>
-                                <?php if(isset($_POST['add-novel'])) {?>
+                            <?php } else if(isset($_POST['add-hq']) || isset($_POST['alt-hq'])) { ?>
+                                <td>
+                                    <input type="text" class="form-control text-center" id="titulo-hq" name="titulo-hq">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control text-center" id="caps-hq" name="caps-hq">
+                                </td>
+                            <?php } if(isset($_POST['add-novel'])) {?>
+                                <td>
                                     <button class="btn btn-success btn-circle" id="btn-add-novel" name="btn-add-novel">
                                         <img src="../imagens/plus-2x.png">
                                     </button>
+                                </td>
                                 <?php } else if(isset($_POST['alt-novel'])) { ?>
-                                    <button class="btn btn-success btn-circle" id="btn-alter-novel" name="btn-alter-novel">
-                                        <img src="../imagens/pencil-2x.png">
-                                    </button>
-                                <?php } ?>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </form>
-            <form method="post">
-                <table class="table table-striped table-hover text-center tab-hide tab-manga">
-                    <thead>
-                        <tr>
-                            <th>Título</th>
-                            <th>Capítulos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <input type="text" id="titulo-manga" name="titulo-manga" class="form-control text-center">   
-                            </td>
-                            <td>
-                                <input type="text" id="caps-manga" name="caps-manga" class="form-control text-center">
-                            </td>
-                            <td>
-                            <?php if(isset($_POST['add-manga'])) {?>
-                                    <button class="btn btn-success btn-circle" id="btn-add-manga" name="btn-add-manga">
-                                        <img src="../imagens/plus-2x.png">
-                                    </button>
+                                    <td>
+                                        <button class="btn btn-success btn-circle" id="btn-alter-novel" name="btn-alter-novel">
+                                            <img src="../imagens/pencil-2x.png">
+                                        </button>
+                                    </td>
+                                <?php } else if(isset($_POST['add-manga'])) { ?>
+                                    <td>
+                                        <button class="btn btn-success btn-circle" id="btn-add-manga" name="btn-add-manga">
+                                            <img src="../imagens/plus-2x.png">
+                                        </button>
+                                    </td>
                                 <?php } else if(isset($_POST['alt-manga'])) { ?>
-                                    <button class="btn btn-success btn-circle" id="btn-alter-manga" name="btn-alter-manga">
-                                        <img src="../imagens/pencil-2x.png">
-                                    </button>
-                                <?php } ?>
-                        </tr>
-                    </tbody>
-                </table>
-            </form>
-            <form method="post">   
-                <table class="table table-striped table-hover tab-hide tab-anime text-center">
-                    <thead>
-                        <tr>
-                            <th>Título</th>
-                            <th>Episódios</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <input type="text" class="form-control text-center" name="titulo-anime" id="titulo-anime">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control text-center" name="caps-anime" id="caps-anime">
-                            </td>
-                            <td>
-                                <?php if(isset($_POST['add-anime'])) {?>
-                                    <button class="btn btn-success btn-circle" id="btn-add-anime" name="btn-add-anime">
-                                        <img src="../imagens/plus-2x.png">
-                                    </button>
+                                    <td>
+                                        <button class="btn btn-success btn-circle" id="btn-alter-manga" name="btn-alter-manga">
+                                            <img src="../imagens/pencil-2x.png">
+                                        </button>
+                                    </td>
+                                <?php } else if(isset($_POST['add-anime'])) { ?>
+                                    <td>
+                                        <button class="btn btn-success btn-circle" id="btn-add-anime" name="btn-add-anime">
+                                            <img src="../imagens/plus-2x.png">
+                                        </button>
+                                    </td>
                                 <?php } else if(isset($_POST['alt-anime'])) { ?>
-                                    <button class="btn btn-success btn-circle" id="btn-alter-anime" name="btn-alter-anime">
-                                        <img src="../imagens/pencil-2x.png">
-                                    </button>
-                                <?php } ?>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </form>
-            <form method="post">
-                <table class="table table-striped table-hover text-center tab-hide tab-filme">
-                    <thead>
-                        <tr>
-                            <th>Título</th>
-                            <th>Partes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <input type="text" id="titulo-filme" name="titulo-filme" class="form-control text-center">   
-                            </td>
-                            <td>
-                                <input type="text" id="caps-filme" name="caps-filme" class="form-control text-center">
-                            </td>
-                            <td>
-                            <td>
-                                <?php if(isset($_POST['add-filme'])) {?>
+                                    <td>
+                                        <button class="btn btn-success btn-circle" id="btn-alter-anime" name="btn-alter-anime">
+                                            <img src="../imagens/pencil-2x.png">
+                                        </button>
+                                    </td>
+                                <?php } else if(isset($_POST['add-filme'])) { ?>
                                     <button class="btn btn-success btn-circle" id="btn-add-filme" name="btn-add-filme">
                                         <img src="../imagens/plus-2x.png">
                                     </button>
@@ -242,39 +221,19 @@
                                     <button class="btn btn-success btn-circle" id="btn-alter-filme" name="btn-alter-filme">
                                         <img src="../imagens/pencil-2x.png">
                                     </button>
-                                <?php } ?>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </form>
-            <form method="post">
-                <table class="table table-striped table-hover tab-hide tab-hq text-center">
-                    <thead>
-                        <tr>
-                            <th>Título</th>
-                            <th>Capítulo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <input type="text" class="form-control text-center" id="titulo-hq" name="titulo-hq">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control text-center" id="caps-hq" name="caps-hq">
-                            </td>
-                            <td>
-                                <?php if(isset($_POST['add-hq'])) {?>
-                                    <button class="btn btn-success btn-circle" id="btn-add-hq" name="btn-add-hq">
-                                        <img src="../imagens/plus-2x.png">
-                                    </button>
+                                <?php } else if(isset($_POST['add-hq'])) { ?>
+                                    <td>
+                                        <button class="btn btn-success btn-circle" id="btn-add-hq" name="btn-add-hq">
+                                            <img src="../imagens/plus-2x.png">
+                                        </button>
+                                    </td>
                                 <?php } else if(isset($_POST['alt-hq'])) { ?>
-                                    <button class="btn btn-success btn-circle" id="btn-alter-hq" name="btn-alter-hq">
-                                        <img src="../imagens/pencil-2x.png">
-                                    </button>
+                                    <td>
+                                        <button class="btn btn-success btn-circle" id="btn-alter-hq" name="btn-alter-hq">
+                                            <img src="../imagens/pencil-2x.png">
+                                        </button>
+                                    </td>
                                 <?php } ?>
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -317,27 +276,7 @@
                     <th>link</th>
                 </thead>
                 <tbody>
-                    <?php
-                        if(isset($_POST['btn-add-manga']))
-                        {
-                            require 'adm_help.php';
-                            for($i = 1; $i <= $caps_manga; $i++)
-                            { ?>
-                                <tr>
-                                    <td><?php echo $titulo_manga; ?></td>
-                                    <td><?php echo 'Capítulo '. $i; ?></td>
-                                    <td><a href="../mangas/<?php echo $titulo_anime; ?>/<?php echo 'capitulo-'.$i; ?>" class="btn btn-link"><?php echo 'Capítulo '. $i; ?></a></td>
-                                </tr>
-                        <?php    }} 
-                            else if(isset($_POST['btn-alter-manga'])) {
-                            require('adm_help.php');
-                            for($i = 1; $i <= $caps_manga; $i++) { ?>
-                                <tr>
-                                    <td><?php echo $titulo_manga; ?></td>
-                                    <td><?php echo 'Capítulo '. $i; ?></td>
-                                    <td><a href="../mangas/<?php echo $titulo_manga; ?>/<?php echo 'capitulo-'.$i; ?>" class="btn btn-link"><?php echo 'Capítulo '. $i; ?></a></td>
-                                </tr>
-                        <?php }} ?>  
+                    <?php if(isset($_POST['btn-add-manga'])) { require('arquivos.php'); } ?>
                 </tbody>
             </table>
             <table class="table table-striped table-hover text-center tab-alter-anime tab-add-anime tab-hide">
@@ -433,44 +372,24 @@
         </div>
         <div class="col-3 bg-light border-left">
             <table class="table table-striped table-hover text-center tab-novels tab-hide">
-                    <tbody>
-                        <?php if(isset($_POST['btn-add-novel']) || isset($_POST['btn-alter-novel']) || isset($_POST['add-novel']) || isset($_POST['alt-novel'])) {
-                            require('adm_help.php');
-                            while($dado = $con->fetch_array()) { ?>
-                                <tr class="tr-show" style="cursor:pointer;">
-                                    <th scope="row">Título</th>
-                                    <td><?php echo $dado['titulo'];?></td>
-                                </tr>
-                                <tr class="tr">
-                                    <th scope="row">ID</th>
-                                    <td><?php echo $dado['id']; ?></td>
-                                </tr>
-                                <tr class="tr">
-                                    <th scope="row">Capítulos</th>
-                                    <td><?php echo $dado['capitulos']; ?></td>
-                                </tr>
-                                <tr class="tr">
-                                    <th scope="row">Assinaturas</th>
-                                    <td><?php echo $dado['assinaturas']; ?></td>
-                                </tr>
-                                <tr class="tr">
-                                    <th scope="row">Lido</th>
-                                    <td><?php echo $dado['lido']; ?></td>
-                                </tr>
-                                <tr class="tr">
-                                    <th scope="row">Notas</th>
-                                    <td><?php echo $dado['notas']; ?></td>
-                                </tr>
-                                <tr class="tr">
-                                    <th scope="row">Valor das Notas</th>
-                                    <td><?php echo $dado['vnotas']; ?></td>
-                                </tr>
-                                <tr class="tr">
-                                    <th scope="row">Média das Notas</th>
-                                    <td><?php echo $dado['mnotas']; ?></td>
-                                </tr>
-                        <?php }} ?>
-                    </tbody>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Capítulo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if(isset($_POST['btn-add-novel']) || isset($_POST['btn-alter-novel']) || isset($_POST['add-novel']) || isset($_POST['alt-novel'])) {
+                        require('adm_help.php');
+                        while($dado = $con->fetch_array()) { ?>
+                        <tr>
+                            <td><?php echo $dado['id']; ?></td>
+                            <td><?php echo $dado['titulo']; ?></td>
+                            <td><?php echo $dado['capitulos']; ?></td>
+                        </tr>
+                    <?php }} ?>
+                </tbody>
             </table>
             <table class="table table-striped table-hover text-center tab-mangas tab-hide">
                 <thead>
@@ -554,7 +473,6 @@
             </table>
         </div>
     </div>
-<?php include '../footer.php'; ?>
 <?php if(isset($_POST['add-novel'])) {?><script>$('table.tab-novel').removeClass('tab-hide')</script><?php } ?>
 <?php if(isset($_POST['add-manga'])) {?><script>$('table.tab-manga').removeClass('tab-hide')</script><?php } ?>
 <?php if(isset($_POST['add-anime'])) {?><script>$('table.tab-anime').removeClass('tab-hide')</script><?php } ?>
@@ -566,6 +484,13 @@
 <?php if(isset($_POST['alt-anime'])) {?><script>$('table.tab-anime').removeClass('tab-hide')</script><?php } ?>
 <?php if(isset($_POST['alt-filme'])) {?><script>$('table.tab-filme').removeClass('tab-hide')</script><?php } ?>
 <?php if(isset($_POST['alt-hq'])) {?><script>$('table.tab-hq').removeClass('tab-hide')</script><?php } ?>
+
+<?php if(isset($_POST['env-novel'])) { require('adm_help.php'); } ?>
+<?php if(isset($_POST['env-manga'])) { require('adm_help.php'); } ?>
+<?php if(isset($_POST['env-anime'])) { require('adm_help.php'); } ?>
+<?php if(isset($_POST['env-filme'])) { require('adm_help.php'); } ?>
+<?php if(isset($_POST['env-hq'])) { require('adm_help.php'); } ?>
+
 
 <script>
     let clicks = 0;

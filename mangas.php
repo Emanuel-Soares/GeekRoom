@@ -26,14 +26,32 @@
   </a>
 </div>
 </div>
-<?php include 'header.php'; ?>
-
+<?php require 'header.php'; ?>
 <div class="container-fluid">
     <div class="row">
-        <div id="rec-mang" class="col-3 bg-light border-right"> <!-- recomendados -->
-            <h2 class="lead text-center h2">Recomendados</h2><hr>            
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+        <div id="rec-mang" class="col-3 bg-darkgray"> <!-- recomendados -->
+            <h2 class="lead text-center h2 white">Recomendados</h2><hr>            
             <div class="card" style="width: 100%;">
-                <img style="width:auto;height:200px;" class="card-img-top" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/97735551-1fae-46a0-a594-095d60705833/dczjbu7-cc3c6d8f-27b6-4040-b12d-ce91ef2e8cab.jpg/v1/fill/w_1192,h_670,q_70,strp/solo_leveler_v1s1_3840x2160_by_wingsofwar_dczjbu7-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjE2MCIsInBhdGgiOiJcL2ZcLzk3NzM1NTUxLTFmYWUtNDZhMC1hNTk0LTA5NWQ2MDcwNTgzM1wvZGN6amJ1Ny1jYzNjNmQ4Zi0yN2I2LTQwNDAtYjEyZC1jZTkxZWYyZThjYWIuanBnIiwid2lkdGgiOiI8PTM4NDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.OuGPeskYCmegsML2cd3dw3B_5FbTfv8WWDpXcVrtvtk" alt="Card image cap">
+                <img style="width:auto;height:200px;" class="card-img-top" src="imagens/solo_leveling.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Solo Leveling</h5>
                     <p class="card-text">Dez anos atrás, depois do "Portal" que conecta o mundo real com um mundo de monstros se abriu...</p>
@@ -88,7 +106,7 @@
             <hr style="margin-bottom:10px;">
         </div>
 
-        <div class="col-9 bg-light"> <!-- Lançamentos -->
+        <div class="col-9 bg-darkgray white"> <!-- Lançamentos -->
             <h2 class="display-4 lead text-center">Lançamentos</h2><hr>
 
             <div class="container-fluid">
@@ -148,7 +166,7 @@
                 <hr>
             </div>
             <div class="table-mang">
-                <table class="table table-striped table-hover text-center">
+                <table class="table table-dark table-striped table-hover text-center">
                     <thead>
                         <tr>
                             <th>Mangás</th>
@@ -163,154 +181,204 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row" class="border-right">1</th>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
+                            <th name="manga-1" scope="row" class="border-right">1</th>
+                            <td name="m1-1">mangá</td>
+                            <td name="m2-1">mangá</td>
+                            <td name="m3-1">mangá</td>
+                            <td name="m4-1">mangá</td>
+                            <td name="m5-1">mangá</td>
+                            <td name="m6-1">mangá</td>
+                            <td name="m7-1">mangá</td>
                         </tr>
                         <tr>
-                            <th scope="row" class="border-right">2</th>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
+                            <th name="manga-2" scope="row" class="border-right">2</th>
+                            <td name="m1-2">mangá</td>
+                            <td name="m2-2">mangá</td>
+                            <td name="m3-2">mangá</td>
+                            <td name="m4-2">mangá</td>
+                            <td name="m5-2">mangá</td>
+                            <td name="m6-2">mangá</td>
+                            <td name="m7-2">mangá</td>
                         </tr>
                         <tr>
-                            <th scope="row" class="border-right">3</th>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
+                            <th name="manga-3" scope="row" class="border-right">3</th>
+                            <td name="m1-3">mangá</td>
+                            <td name="m2-3">mangá</td>
+                            <td name="m3-3">mangá</td>
+                            <td name="m4-3">mangá</td>
+                            <td name="m5-3">mangá</td>
+                            <td name="m6-3">mangá</td>
+                            <td name="m7-3">mangá</td>
                         </tr>
                         <tr>
-                            <th scope="row" class="border-right">4</th>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
+                            <th name="manga-4" scope="row" class="border-right">4</th>
+                            <td name="m1-4">mangá</td>
+                            <td name="m2-4">mangá</td>
+                            <td name="m3-4">mangá</td>
+                            <td name="m4-4">mangá</td>
+                            <td name="m5-4">mangá</td>
+                            <td name="m6-4">mangá</td>
+                            <td name="m7-4">mangá</td>
                         </tr>
                         <tr>
-                            <th scope="row" class="border-right">5</th>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
+                            <th name="manga-5" scope="row" class="border-right">5</th>
+                            <td name="m1-5">mangá</td>
+                            <td name="m2-5">mangá</td>
+                            <td name="m3-5">mangá</td>
+                            <td name="m4-5">mangá</td>
+                            <td name="m5-5">mangá</td>
+                            <td name="m6-5">mangá</td>
+                            <td name="m7-5">mangá</td>
                         </tr>
                         <tr>
-                            <th scope="row" class="border-right">6</th>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
+                            <th name="manga-6" scope="row" class="border-right">6</th>
+                            <td  name="m1-6">mangá</td>
+                            <td  name="m2-6">mangá</td>
+                            <td  name="m3-6">mangá</td>
+                            <td  name="m4-6">mangá</td>
+                            <td  name="m5-6">mangá</td>
+                            <td  name="m6-6">mangá</td>
+                            <td  name="m7-6">mangá</td>
                         </tr>
                         <tr>
-                            <th scope="row" class="border-right">7</th>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
+                            <th name="manga-7" scope="row" class="border-right">7</th>
+                            <td name="m1-7">mangá</td>
+                            <td name="m2-7">mangá</td>
+                            <td name="m3-7">mangá</td>
+                            <td name="m4-7">mangá</td>
+                            <td name="m5-7">mangá</td>
+                            <td name="m6-7">mangá</td>
+                            <td name="m7-7">mangá</td>
                         </tr>
                         <tr>
-                            <th scope="row" class="border-right">8</th>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
+                            <th name="manga-8" scope="row" class="border-right">8</th>
+                            <td name="m1-8">mangá</td>
+                            <td name="m2-8">mangá</td>
+                            <td name="m3-8">mangá</td>
+                            <td name="m4-8">mangá</td>
+                            <td name="m5-8">mangá</td>
+                            <td name="m6-8">mangá</td>
+                            <td name="m7-8">mangá</td>
                         </tr>
                         <tr>
-                            <th scope="row" class="border-right">9</th>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
+                            <th name="manga-9" scope="row" class="border-right">9</th>
+                            <td name="m1-9">mangá</td>
+                            <td name="m2-9">mangá</td>
+                            <td name="m3-9">mangá</td>
+                            <td name="m4-9">mangá</td>
+                            <td name="m5-9">mangá</td>
+                            <td name="m6-9">mangá</td>
+                            <td name="m7-9">mangá</td>
                         </tr>
                         <tr>
-                            <th scope="row" class="border-right">10</th>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
+                            <th name="manga-10" scope="row" class="border-right">10</th>
+                            <td name="m1-10">mangá</td>
+                            <td name="m2-10">mangá</td>
+                            <td name="m3-10">mangá</td>
+                            <td name="m4-10">mangá</td>
+                            <td name="m5-10">mangá</td>
+                            <td name="m6-10">mangá</td>
+                            <td name="m7-10">mangá</td>
                         </tr>
                         <tr>
-                            <th scope="row" class="border-right">11</th>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
+                            <th name="manga-11" scope="row" class="border-right">11</th>
+                            <td name="m1-11">mangá</td>
+                            <td name="m2-11">mangá</td>
+                            <td name="m3-11">mangá</td>
+                            <td name="m4-11">mangá</td>
+                            <td name="m5-11">mangá</td>
+                            <td name="m6-11">mangá</td>
+                            <td name="m7-11">mangá</td>
                         </tr>
                         <tr>
-                            <th scope="row" class="border-right">12</th>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
+                            <th name="manga-12" scope="row" class="border-right">12</th>
+                            <td name="m1-12">mangá</td>
+                            <td name="m2-12">mangá</td>
+                            <td name="m3-12">mangá</td>
+                            <td name="m4-12">mangá</td>
+                            <td name="m5-12">mangá</td>
+                            <td name="m6-12">mangá</td>
+                            <td name="m7-12">mangá</td>
                         </tr>
                         <tr>
-                            <th scope="row" class="border-right">13</th>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
+                            <th name="manga-13" scope="row" class="border-right">13</th>
+                            <td name="m1-13">mangá</td>
+                            <td name="m2-13">mangá</td>
+                            <td name="m3-13">mangá</td>
+                            <td name="m4-13">mangá</td>
+                            <td name="m5-13">mangá</td>
+                            <td name="m6-13">mangá</td>
+                            <td name="m7-13">mangá</td>
                         </tr>
                         <tr>
-                            <th scope="row" class="border-right">14</th>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
+                            <th name="manga-14" scope="row" class="border-right">14</th>
+                            <td name="m1-14">mangá</td>
+                            <td name="m2-14">mangá</td>
+                            <td name="m3-14">mangá</td>
+                            <td name="m4-14">mangá</td>
+                            <td name="m5-14">mangá</td>
+                            <td name="m6-14">mangá</td>
+                            <td name="m7-14">mangá</td>
                         </tr>
                         <tr>
-                            <th scope="row" class="border-right">15</th>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
-                            <td>mangá</td>
+                            <th name="manga-15" scope="row" class="border-right">15</th>
+                            <td name="m1-15">mangá</td>
+                            <td name="m2-15">mangá</td>
+                            <td name="m3-15">mangá</td>
+                            <td name="m4-15">mangá</td>
+                            <td name="m5-15">mangá</td>
+                            <td name="m6-15">mangá</td>
+                            <td name="m7-15">mangá</td>
+                        </tr>
+                        <tr>
+                            <th name="manga-16" scope="row" class="border-right">16</th>
+                            <td name="m1-16">mangá</td>
+                            <td name="m2-16">mangá</td>
+                            <td name="m3-16">mangá</td>
+                            <td name="m4-16">mangá</td>
+                            <td name="m5-16">mangá</td>
+                            <td name="m6-16">mangá</td>
+                            <td name="m7-16">mangá</td>
+                        </tr>
+                        <tr>
+                            <th name="manga-17" scope="row" class="border-right">17</th>
+                            <td name="m1-17">mangá</td>
+                            <td name="m2-17">mangá</td>
+                            <td name="m3-17">mangá</td>
+                            <td name="m4-17">mangá</td>
+                            <td name="m5-17">mangá</td>
+                            <td name="m6-17">mangá</td>
+                            <td name="m7-17">mangá</td>
+                        </tr>
+                        <tr name="manga-18">
+                            <th scope="row" class="border-right">18</th>
+                            <td name="m1-18">mangá</td>
+                            <td name="m2-18">mangá</td>
+                            <td name="m3-18">mangá</td>
+                            <td name="m4-18">mangá</td>
+                            <td name="m5-18">mangá</td>
+                            <td name="m6-18">mangá</td>
+                            <td name="m7-18">mangá</td>
+                        </tr>
+                        <tr>
+                            <th name="manga-19" scope="row" class="border-right">19</th>
+                            <td name="m1-19">mangá</td>
+                            <td name="m2-19">mangá</td>
+                            <td name="m3-19">mangá</td>
+                            <td name="m4-19">mangá</td>
+                            <td name="m5-19">mangá</td>
+                            <td name="m6-19">mangá</td>
+                            <td name="m7-19">mangá</td>
+                        </tr>
+                        <tr>
+                            <th name="manga-20" scope="row" class="border-right">20</th>
+                            <td name="m1-20">mangá</td>
+                            <td name="m2-20">mangá</td>
+                            <td name="m3-20">mangá</td>
+                            <td name="m4-20">mangá</td>
+                            <td name="m5-20">mangá</td>
+                            <td name="m6-20">mangá</td>
+                            <td name="m7-20">mangá</td>
                         </tr>
                     </tbody>
                 </table>
@@ -318,6 +386,7 @@
         </div>
     </div>
 </div>
+
 <?php include 'footer.php'; ?>
 
 <script>

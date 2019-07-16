@@ -1,6 +1,6 @@
-<div class="jumbotron" style="padding:120px;">
-    <div class="container-fluid">
-        <h1 class="display-4">Use nossa própria rede social</h1>
-        <a href="#" class="lead">Saiba mais</a>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 bg-darkgray" style="padding-top:400px;"></div>
+        <div class="col-9 bg-darkgray" style="padding-top:400px;"></div>
     </div>
 </div>

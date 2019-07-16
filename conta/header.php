@@ -137,7 +137,7 @@
                         <input type="text" class="form-control" placeholder="O que deseja buscar?">
                     </div>
                     <div class="input-group-append">
-                            <input type="submit" class="btn btn-success input-group-append" value="Buscar">
+                        <input type="submit" class="btn btn-success input-group-append" value="Buscar">
                     </div>
                 </div>
             </form>
