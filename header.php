@@ -33,6 +33,9 @@
 .white {
     color: #fff;
 }
+.dropdown-item:hover {
+    background-color: #e0f2f1 !important;
+}
 </style>
 
 <!DOCTYPE html>
@@ -136,7 +139,7 @@
                             <a href="conta/historico.php" class="dropdown-item">Histórico</a>
                             <a href="conta/chats.php" class="dropdown-item">Chats</a>
                             <a href="conta/adm.php" class="dropdown-item">Adiministração</a>
-                            <form method="post">
+                            <form method="post" class="form-inline ml-md-auto" style="margin: auto 0 auto 0;">
                                 <input type="submit" value="sair" name="sair" class="dropdown-item">
                             </form>
                         </div>
@@ -150,7 +153,7 @@
                         <input type="text" class="form-control" placeholder="O que deseja buscar?">
                     </div>
                     <div class="input-group-append">
-                            <input type="submit" class="btn btn-success input-group-append" value="Buscar">
+                        <input type="submit" class="btn btn-success input-group-append" value="Buscar">
                     </div>
                 </div>
             </form>
