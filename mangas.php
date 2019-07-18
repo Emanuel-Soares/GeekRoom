@@ -38,24 +38,38 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div id="pesquisa_manga" class="modal-body">
-                        <form method="post">
-                            <input type="text" id="pesquisa" class="form-control" placeholder="Digite que mangá deseja buscar">
-                            <div id="mangas"></div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button id="busca" type="submit" class="btn btn-primary">Buscar</button>
-                    </div>
+                    <form id="Formulario" method="post">
+                        <div id="pesquisa_manga" class="modal-body">
+                            <input type="text" autocomplete="off" onkeyup="showHint(this.value)" id="pesquisa" class="form-control" placeholder="Digite que mangá deseja buscar">
+                            <div id="mangas">
+                                <h5 id="titulo" class="lead"></h5><br>
+                                <img id="imgs" src="imagens/solo_leveling.jpg" style="height:20px;width:20px;display:none;">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
 
         <script>
-            $('#pesquisa_manga').submit(function(e)
-                e.preventDefault();
-            )
+            function showHint(str) {
+              var xhttp;
+              if (str.length == 0) { 
+                document.getElementById("titulo").innerHTML = "";
+                return;
+              }
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("titulo").innerHTML = this.responseText;
+                }
+              };
+              xhttp.open("GET", "gethint.php?m="+str, true);
+              xhttp.send();   
+            }
         </script>
 
         <div id="rec-mang" class="col-3 bg-darkgray"> <!-- recomendados -->
@@ -398,11 +412,3 @@
 </div>
 
 <?php include 'footer.php'; ?>
-
-<script>
-    if($(window).width() <= 500) {
-        $('.a').addClass('abc')
-    } else {
-        $('.a').removeClass('abc')
-    }
-</script>

@@ -25,13 +25,9 @@ Class Contas {
         }
     }
 
-    public function pesquisar($tabela)
+    public function pesquisar($p ,$tabela)
     {   
         global $mysqli;
-        if(isset($_POST['pesquisa']))
-        {
-            $p = $_POST['pesquisa'];
-        }
         $consulta = "SELECT titulo FROM $tabela WHERE titulo LIKE '%$p%'";
         $con = $mysqli->query($consulta);
         return $con;

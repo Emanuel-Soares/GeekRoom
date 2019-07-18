@@ -47,11 +47,11 @@
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <?php $s->conectarPdo('geekroom', '127.0.0.1', 'root', '');
-                         if($username != 'Conta') { ?>                    
+                        if($username != 'Conta') { ?>                    
                         <a href="novel.php" class="nav-link dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Novels</a>
                             <div class="dropdown-menu">
-                            <a href="" class="dropdown-item">Início</a>
+                            <a href="novel.php" class="dropdown-item">Início</a>
                             <a href="" class="dropdown-item">Lançamentos</a>
                             <a href="" class="dropdown-item">Lista</a>
                             <a href="" class="dropdown-item">Gêneros</a>
