@@ -21,6 +21,12 @@
     }
 ?>
 
+<style>
+.bg-darkgray-2 {
+    background-color: #191919;
+}
+</style>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -35,7 +41,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-darkgray-2 sticky-top">
         <a href="../index.php" class="navbar-brand">GeekRoom</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
             <span class="navbar-toggler-icon"></span>
@@ -50,7 +56,7 @@
                         <a href="novel.php" class="nav-link dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Novels</a>
                             <div class="dropdown-menu">
-                            <a href="" class="dropdown-item">Início</a>
+                            <a href="../novels.php" class="dropdown-item">Início</a>
                             <a href="" class="dropdown-item">Lançamentos</a>
                             <a href="" class="dropdown-item">Lista</a>
                             <a href="" class="dropdown-item">Gêneros</a>

@@ -21,9 +21,13 @@
 .white {
     color: #fff;
 }
+.h2 {
+    font-size: 18pt !important;
+    color: #000 !important;
+}
 </style>
 
-<div class="container-fluid">
+<div class="container-fluid div">
     <div class="row">
         <div class="col-3 border-right bg-light">
             <h2 class="lead text-center h2">Adicionar</h2>
@@ -214,13 +218,13 @@
                                         </button>
                                     </td>
                                 <?php } else if(isset($_POST['add-filme'])) { ?>
-                                    <button class="btn btn-success btn-circle" id="btn-add-filme" name="btn-add-filme">
-                                        <img src="../imagens/plus-2x.png">
-                                    </button>
+                                        <button class="btn btn-success btn-circle" id="btn-add-filme" name="btn-add-filme">
+                                            <img src="../imagens/plus-2x.png">
+                                        </button>
                                 <?php } else if(isset($_POST['alt-filme'])) { ?>
-                                    <button class="btn btn-success btn-circle" id="btn-alter-filme" name="btn-alter-filme">
-                                        <img src="../imagens/pencil-2x.png">
-                                    </button>
+                                        <button class="btn btn-success btn-circle" id="btn-alter-filme" name="btn-alter-filme">
+                                            <img src="../imagens/pencil-2x.png">
+                                        </button>
                                 <?php } else if(isset($_POST['add-hq'])) { ?>
                                     <td>
                                         <button class="btn btn-success btn-circle" id="btn-add-hq" name="btn-add-hq">
@@ -255,7 +259,7 @@
                                 <tr>
                                     <td><?php echo $titulo_novel; ?></td>
                                     <td><?php echo 'Capítulo '. $i; ?></td>
-                                    <td><a href="../novels/<?php echo $titulo_novel; ?>/<?php echo 'capitulo-'.$i; ?>" class="btn btn-link"><?php echo 'Capítulo '. $i; ?></a></td>
+                                    <td><a href="../novels/<?php echo $titulo_novel; ?>/<?php echo 'capitulo-'.$i.'.php'; ?>" class="btn btn-link"><?php echo 'Capítulo '. $i; ?></a></td>
                                 </tr>
                         <?php    }} 
                             else if(isset($_POST['btn-alter-novel'])) {
@@ -264,7 +268,7 @@
                                 <tr>
                                     <td><?php echo $titulo_novel; ?></td>
                                     <td><?php echo 'Capítulo '. $i; ?></td>
-                                    <td><a href="../novels/<?php echo $titulo_novel; ?>/<?php echo 'capitulo-'.$i; ?>" class="btn btn-link"><?php echo 'Capítulo '. $i; ?></a></td>
+                                    <td><a href="../novels/<?php echo $titulo_novel; ?>/<?php echo 'capitulo-'.$i.'.php'; ?>" class="btn btn-link"><?php echo 'Capítulo '. $i; ?></a></td>
                                 </tr>
                         <?php }} ?>        
                 </tbody>
@@ -276,7 +280,27 @@
                     <th>link</th>
                 </thead>
                 <tbody>
-                    <?php if(isset($_POST['btn-add-manga'])) { require('arquivos.php'); } ?>
+                    <?php
+                    if(isset($_POST['btn-add-manga'])){
+                        require('adm_help.php');
+                        for($i = 1; $i <= $caps_manga; $i++)
+                        { ?>
+                            <tr>
+                                <td><?php echo $titulo_manga; ?></td>
+                                <td><?php echo 'Capítulo '. $i; ?></td>
+                                <td><a href="../mangas/<?php echo $titulo_manga; ?>/<?php echo 'capitulo-'.$i.'.php'; ?>" class="btn btn-link"><?php echo 'Capítulo '. $i; ?></a></td>
+                            </tr>
+                        <?php 
+                        }}
+                        if(isset($_POST['btn-alter-manga'])) {
+                        require('adm_help.php');
+                        for($i = 1; $i <= $caps_manga; $i++) { ?>
+                            <tr>
+                                <td><?php echo $titulo_manga; ?></td>
+                                <td><?php echo 'Capítulo '. $i; ?></td>
+                                <td><a href="../mangas/<?php echo $titulo_manga; ?>/<?php echo 'capitulo-'.$i.'.php'; ?>" class="btn btn-link"><?php echo 'Capítulo '. $i; ?></a></td>
+                            </tr>
+                    <?php }} ?>
                 </tbody>
             </table>
             <table class="table table-striped table-hover text-center tab-alter-anime tab-add-anime tab-hide">
@@ -295,7 +319,7 @@
                                 <tr>
                                     <td><?php echo $titulo_anime; ?></td>
                                     <td><?php echo 'Episódio '. $i; ?></td>
-                                    <td><a href="../animes/<?php echo $titulo_anime; ?>/<?php echo 'episodio-'.$i; ?>" class="btn btn-link"><?php echo 'Episódio '. $i; ?></a></td>
+                                    <td><a href="../animes/<?php echo $titulo_anime; ?>/<?php echo 'episodio-'.$i.'.php'; ?>" class="btn btn-link"><?php echo 'Episódio '. $i; ?></a></td>
                                 </tr>
                         <?php    }} 
                             else if(isset($_POST['btn-alter-anime'])) {
@@ -304,7 +328,7 @@
                                 <tr>
                                     <td><?php echo $titulo_anime; ?></td>
                                     <td><?php echo 'Episódio '. $i; ?></td>
-                                    <td><a href="../animes/<?php echo $titulo_anime; ?>/<?php echo 'episodio-'.$i; ?>" class="btn btn-link"><?php echo 'Episódio '. $i; ?></a></td>
+                                    <td><a href="../animes/<?php echo $titulo_anime; ?>/<?php echo 'episodio-'.$i.'.php'; ?>" class="btn btn-link"><?php echo 'Episódio '. $i; ?></a></td>
                                 </tr>
                         <?php }} ?>        
                 </tbody>
@@ -325,7 +349,7 @@
                                 <tr>
                                     <td><?php echo $titulo_filme; ?></td>
                                     <td><?php echo 'Parte '. $i; ?></td>
-                                    <td><a href="../filmes/<?php echo $titulo_filme; ?>/<?php echo 'parte-'.$i; ?>" class="btn btn-link"><?php echo 'Parte '. $i; ?></a></td>
+                                    <td><a href="../filmes/<?php echo $titulo_filme; ?>/<?php echo 'parte-'.$i.'.php'; ?>" class="btn btn-link"><?php echo 'Parte '. $i; ?></a></td>
                                 </tr>
                         <?php    }} 
                             else if(isset($_POST['btn-alter-filme'])) {
@@ -334,7 +358,7 @@
                                 <tr>
                                     <td><?php echo $titulo_filme; ?></td>
                                     <td><?php echo 'Parte '. $i; ?></td>
-                                    <td><a href="../filmes/<?php echo $titulo_filme; ?>/<?php echo 'parte-'.$i; ?>" class="btn btn-link"><?php echo 'Parte '. $i; ?></a></td>
+                                    <td><a href="../filmes/<?php echo $titulo_filme; ?>/<?php echo 'parte-'.$i.'.php'; ?>" class="btn btn-link"><?php echo 'Parte '. $i; ?></a></td>
                                 </tr>
                         <?php }} ?>        
                 </tbody>
@@ -355,7 +379,7 @@
                                 <tr>
                                     <td><?php echo $titulo_hq; ?></td>
                                     <td><?php echo 'Capítulo '. $i; ?></td>
-                                    <td><a href="../hqs/<?php echo $titulo_hq; ?>/<?php echo 'capitulo-'.$i; ?>" class="btn btn-link"><?php echo 'Capítulo '. $i; ?></a></td>
+                                    <td><a href="../hqs/<?php echo $titulo_hq; ?>/<?php echo 'capitulo-'.$i.'.php'; ?>" class="btn btn-link"><?php echo 'Capítulo '. $i; ?></a></td>
                                 </tr>
                         <?php    }} 
                             else if(isset($_POST['btn-alter-hq'])) {
@@ -364,7 +388,7 @@
                                 <tr>
                                     <td><?php echo $titulo_hq; ?></td>
                                     <td><?php echo 'Capítulo '. $i; ?></td>
-                                    <td><a href="../hqs/<?php echo $titulo_hq; ?>/<?php echo 'capitulo-'.$i; ?>" class="btn btn-link"><?php echo 'Capítulo '. $i; ?></a></td>
+                                    <td><a href="../hqs/<?php echo $titulo_hq; ?>/<?php echo 'capitulo-'.$i.'.php'; ?>" class="btn btn-link"><?php echo 'Capítulo '. $i; ?></a></td>
                                 </tr>
                         <?php }} ?>        
                 </tbody>

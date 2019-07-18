@@ -1,5 +1,5 @@
 <?php
-Class Contas {
+Class Arquivo {
     
     private $pdo;
     private $mysqli;
@@ -25,13 +25,9 @@ Class Contas {
         }
     }
 
-    public function pesquisar($tabela)
+    public function pesquisar($p, $tabela)
     {   
         global $mysqli;
-        if(isset($_POST['pesquisa']))
-        {
-            $p = $_POST['pesquisa'];
-        }
         $consulta = "SELECT titulo FROM $tabela WHERE titulo LIKE '%$p%'";
         $con = $mysqli->query($consulta);
         return $con;
@@ -228,5 +224,24 @@ Class Contas {
         }
     }
 
+    public function gerarArquivo($titulo ,$tcap ,$diretorio, $gerador, $p)
+    {
+        $caminho = "../$diretorio/".$titulo."/";
+        if(is_dir($caminho)){}
+        else { mkdir($caminho); }
+        $c = array();
+        for($i = 1; $i <= $tcap; $i++)
+        {
+            $conteudo = file_get_contents($gerador.'.php');
+            if(is_file('../'.$diretorio.'/'.$titulo.'/'.$p.'-'.$i.'.php'))
+            {
+                continue;
+            }
+            else
+            {
+                file_put_contents('../'.$diretorio.'/'.$titulo.'/'.$p.'-'.$i.'.php', $conteudo);
+            }
+        }
+    }
 }
 ?>

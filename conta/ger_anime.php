@@ -1,5 +1,5 @@
 <?php
-require_once('../header_manga.php');
+require_once('../header_anime.php');
 ?>
 
 <div class="container-fluid">
@@ -8,11 +8,9 @@ require_once('../header_manga.php');
             <h2 class="h2 lead white text-center">Titulo</h2>
         </div>
         <div class="col-9 bg-darkgray">
-            <h2 class="h2 white">Capítulo - 1</h2>
+            <h2 class="h2 white">Episódio - 1</h2>
         </div>
     </div>
 </div>
 
-
-
-<?php require('../footer_manga.php'); ?>
+<?php require('../footer_anime.php'); ?>

@@ -8,11 +8,25 @@
 }
 
 .card-lanc p {
-    display:none;
+    opacity: 0;
 }
 
 .card-lanc:hover p {
-    display:block;
+    opacity: 1;
+    transition: .6s linear;    
+}
+
+.bg-darkgray {
+    background-color: #151515 !important;
+}
+.bg-darkgray-2 {
+    background-color: #181818 !important;
+}
+.white {
+    color: #fff !important;
+}
+.dropdown-item:hover {
+    background-color: #e0f2f1 !important;
 }
 
 h2.h2 {

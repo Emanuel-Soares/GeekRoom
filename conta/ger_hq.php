@@ -1,5 +1,5 @@
 <?php
-require_once('../header_manga.php');
+require_once('../header_hq.php');
 ?>
 
 <div class="container-fluid">
@@ -15,4 +15,4 @@ require_once('../header_manga.php');
 
 
 
-<?php require('../footer_manga.php'); ?>
+<?php require('../footer_hq.php'); ?>

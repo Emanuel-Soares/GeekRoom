@@ -23,21 +23,6 @@
     }
 ?>
 
-<style>
-.bg-darkgray {
-    background-color: #151515 !important;
-}
-.bg-darkgray-2 {
-    background-color: #181818 !important;
-}
-.white {
-    color: #fff !important;
-}
-.dropdown-item:hover {
-    background-color: #e0f2f1 !important;
-}
-</style>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -146,17 +131,8 @@
                     </li>
                     <?php } ?>
             </ul>
-
-            <form class="form-inline ml-md-auto" style="margin: auto 0 auto 0;">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <input type="text" class="form-control" placeholder="O que deseja buscar?">
-                    </div>
-                    <div class="input-group-append">
-                        <input type="submit" class="btn btn-success input-group-append" value="Buscar">
-                    </div>
-                </div>
-            </form>
-
+            <div class="ml-md-auto" style="margin: auto 0 auto 0;">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Buscar</button>
+            </div>
         </div>
     </nav>

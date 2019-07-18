@@ -1,53 +1,63 @@
 <div class="jumbotron-fluid" style="padding:200px;">
-    <div id="carouselExampleIndicators" style="position:absolute;top:0px;left:0px;right:0px;height:auto;display:block;" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="imagens/returners_magic.jpeg" style="height:400px;" class="d-block w-100" alt="...">
+    <div id="slide" style="position:absolute;top:0px;left:0px;right:0px;height:auto;display:block;" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#slide" data-slide-to="0" class="active"></li>
+            <li data-target="#slide" data-slide-to="1"></li>
+            <li data-target="#slide" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="imagens/returners_magic.jpeg" style="height:400px;" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="imagens/sorcerer_king.jpeg" class="d-block w-100" style="height:400px;" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="imagens/solo_leveling.jpg" class="d-block w-100" style="height:400px;" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#slide" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#slide" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-    <div class="carousel-item">
-      <img src="imagens/sorcerer_king.jpeg" class="d-block w-100" style="height:400px;" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="imagens/solo_leveling.jpg" class="d-block w-100" style="height:400px;" alt="...">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
 </div>
 <?php require 'header.php'; ?>
 <div class="container-fluid">
     <div class="row">
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Área De Busca</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="pesquisa_manga" class="modal-body">
+                        <form method="post">
+                            <input type="text" id="pesquisa" class="form-control" placeholder="Digite que mangá deseja buscar">
+                            <div id="mangas"></div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button id="busca" type="submit" class="btn btn-primary">Buscar</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $('#pesquisa_manga').submit(function(e)
+                e.preventDefault();
+            )
+        </script>
+
         <div id="rec-mang" class="col-3 bg-darkgray"> <!-- recomendados -->
             <h2 class="lead text-center h2 white">Recomendados</h2><hr>            
             <div class="card" style="width: 100%;">
@@ -106,8 +116,8 @@
             <hr style="margin-bottom:10px;">
         </div>
 
-        <div class="col-9 bg-darkgray white"> <!-- Lançamentos -->
-            <h2 class="display-4 lead text-center">Lançamentos</h2><hr>
+        <div class="col-9 bg-darkgray"> <!-- Lançamentos -->
+            <h2 class="display-4 lead text-center white">Lançamentos</h2><hr>
 
             <div class="container-fluid">
                 <div class="card bg-dark text-white">
