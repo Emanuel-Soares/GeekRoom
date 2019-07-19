@@ -132,7 +132,7 @@
                     <?php } ?>
             </ul>
             <div class="ml-md-auto" style="margin: auto 0 auto 0;">
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Buscar</button>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal">Buscar</button>
             </div>
         </div>
     </nav>
