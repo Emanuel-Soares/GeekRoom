@@ -1,5 +1,8 @@
 <?php
 require_once('../header_anime.php');
+$titulo = 'Título';
+$totalEpisodios = 1;
+$episodio = 1;
 ?>
 
 <div class="container-fluid">

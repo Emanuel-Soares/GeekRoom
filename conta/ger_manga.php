@@ -1,5 +1,8 @@
 <?php
 require_once('../header_manga.php');
+$titulo = 'Título';
+$totalCapitulos = 1;
+$capitulo = 1;
 ?>
 
 <div class="container-fluid">

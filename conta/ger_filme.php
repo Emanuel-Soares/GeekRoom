@@ -1,5 +1,8 @@
 <?php
 require_once('../header_filme.php');
+$titulo = 'Título';
+$totalPartes = 1;
+$Parte = 1;
 ?>
 
 <div class="container-fluid">

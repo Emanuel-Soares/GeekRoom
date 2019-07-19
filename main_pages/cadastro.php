@@ -39,8 +39,6 @@
 </div>
 
 <?php
-require_once('conexao.php'); 
-
 $c = new Contas;
 
 if(isset($_POST['usr']) && isset($_POST['email']) && isset($_POST['nome']) && isset($_POST['senha']))

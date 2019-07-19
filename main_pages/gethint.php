@@ -1,5 +1,5 @@
 <?php
-require_once('conexao.php');
+require_once('../conexao.php');
 $s = new Contas;
 $s->conectarMysqli('127.0.0.1', 'root', '', 'geekroom');
 $m = $_REQUEST["m"];

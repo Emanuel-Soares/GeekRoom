@@ -10,7 +10,7 @@
         $username = $_SESSION['user'];
         $ranking = $_SESSION['ranking'];
     }
-    require_once('conexao.php');
+    require_once('../conexao.php');
     $s = new Contas;
     if(isset($_POST['sair'])) {    
         $s->conectarPdo('geekroom', '127.0.0.1', 'root', '');
@@ -30,10 +30,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GeekRoom</title>
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/estilo.css">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <script src="bootstrap/js/jquery.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/estilo.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script src="../bootstrap/js/jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
@@ -91,10 +91,10 @@
                     <a class="nav-link dropdown-toggle" style="cursor:pointer;"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $username; ?></a>
                     <div class="dropdown-menu">
-                        <a href="conta/assinaturas.php" class="dropdown-item">Assinaturas</a>
-                        <a href="conta/perfil.php" class="dropdown-item">Perfil</a>
-                        <a href="conta/historico.php" class="dropdown-item">Histórico</a>
-                        <a href="conta/chats.php" class="dropdown-item">Chats</a>
+                        <a href="../conta/assinaturas.php" class="dropdown-item">Assinaturas</a>
+                        <a href="../conta/perfil.php" class="dropdown-item">Perfil</a>
+                        <a href="../conta/historico.php" class="dropdown-item">Histórico</a>
+                        <a href="../conta/chats.php" class="dropdown-item">Chats</a>
                         <form method="post">
                             <input type="submit" value="sair" name="sair" class="dropdown-item">
                         </form>
@@ -105,10 +105,10 @@
                     <a class="nav-link dropdown-toggle" style="cursor:pointer;"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $username; ?></a>
                     <div class="dropdown-menu">
-                        <a href="conta/assinaturas.php" class="dropdown-item">Assinaturas</a>
-                        <a href="conta/perfil.php" class="dropdown-item">Perfil</a>
-                        <a href="conta/historico.php" class="dropdown-item">Histórico</a>
-                        <a href="conta/chats.php" class="dropdown-item">Chats</a>
+                        <a href="../conta/assinaturas.php" class="dropdown-item">Assinaturas</a>
+                        <a href="../conta/perfil.php" class="dropdown-item">Perfil</a>
+                        <a href="../conta/historico.php" class="dropdown-item">Histórico</a>
+                        <a href="../conta/chats.php" class="dropdown-item">Chats</a>
                         <form method="post">
                             <input type="submit" value="sair" name="sair" class="dropdown-item">
                         </form>
@@ -119,11 +119,11 @@
                     <a class="nav-link dropdown-toggle" style="cursor:pointer;"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $username; ?></a>
                         <div class="dropdown-menu">
-                            <a href="conta/assinaturas.php" class="dropdown-item">Assinaturas</a>
-                            <a href="conta/perfil.php" class="dropdown-item">Perfil</a>
-                            <a href="conta/historico.php" class="dropdown-item">Histórico</a>
-                            <a href="conta/chats.php" class="dropdown-item">Chats</a>
-                            <a href="conta/adm.php" class="dropdown-item">Adiministração</a>
+                            <a href="../conta/assinaturas.php" class="dropdown-item">Assinaturas</a>
+                            <a href="../conta/perfil.php" class="dropdown-item">Perfil</a>
+                            <a href="../conta/historico.php" class="dropdown-item">Histórico</a>
+                            <a href="../conta/chats.php" class="dropdown-item">Chats</a>
+                            <a href="../conta/adm.php" class="dropdown-item">Adiministração</a>
                             <form method="post" class="form-inline ml-md-auto" style="margin: auto 0 auto 0;">
                                 <input type="submit" value="sair" name="sair" class="dropdown-item">
                             </form>

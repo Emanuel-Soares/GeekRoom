@@ -24,7 +24,6 @@
 </div>
 
 <?php 
-require_once('conexao.php');
 $c = new Contas;
 if(isset($_POST['email']) && isset($_POST['senha']))
 {
