@@ -51,9 +51,8 @@
     <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-darkgray-2 sticky-top">
-        <a href="../../index.php" class="navbar-brand">GeekRoom</a>
+        <a href="../../main_pages/index.php" class="navbar-brand">GeekRoom</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -66,39 +65,39 @@
                         <a href="../../novel.php" class="nav-link dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Novels</a>
                             <div class="dropdown-menu">
-                            <a href="../../" class="dropdown-item">Início</a>
-                            <a href="../../" class="dropdown-item">Lançamentos</a>
-                            <a href="../../" class="dropdown-item">Lista</a>
-                            <a href="../../" class="dropdown-item">Gêneros</a>
-                            <a href="../../" class="dropdown-item">Favoritos</a>
+                            <a href="../../main_pages/novel.php" class="dropdown-item">Início</a>
+                            <a href="../../main_pages/" class="dropdown-item">Lançamentos</a>
+                            <a href="../../main_pages/" class="dropdown-item">Lista</a>
+                            <a href="../../main_pages/" class="dropdown-item">Gêneros</a>
+                            <a href="../../main_pages/" class="dropdown-item">Favoritos</a>
                             <?php if(!isset($_SESSION['id'])) { ?><a href="../../#" class="dropdown-item">Assinaturas</a><?php } ?>
                         </div>
                     <?php } else { ?>
-                    <a href="../../novel.php" class="nav-link">Novels</a>
+                    <a href="../../main_pages/novel.php" class="nav-link">Novels</a>
                     <?php } ?>
                 </li>
                 <li class="nav-item">
-                    <a href="../../mangas.php" class="nav-link">Mangás</a>
+                    <a href="../../main_pages/mangas.php" class="nav-link">Mangás</a>
                 </li>
                 <li class="nav-item">
-                    <a href="../../animes.php" class="nav-link">Animes</a>
+                    <a href="../../main_pages/animes.php" class="nav-link">Animes</a>
                 </li>
                 <li class="nav-item">
-                    <a href="../../filmes.php" class="nav-link">Filmes</a>
+                    <a href="../../main_pages/filmes.php" class="nav-link">Filmes</a>
                 </li>
                 <li class="nav-item">
-                    <a href="../../hqs.php" class="nav-link">HQs</a>
+                    <a href="../../main_pages/hqs.php" class="nav-link">HQs</a>
                 </li>
                 <li class="nav-item">
-                    <a href="../../livebook.php" class="nav-link">LiveBook</a>
+                    <a href="../../main_pages/livebook.php" class="nav-link">LiveBook</a>
                 </li>
                 <?php if((!isset($_SESSION['id']) || isset($_POST['sair']))) { ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" style="cursor:pointer;"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $username; ?></a>
                         <div class="dropdown-menu">
-                            <a href="../../cadastro.php" class="dropdown-item">Criar conta</a>
-                            <a href="../../login.php" class="dropdown-item">Fazer Login</a>
+                            <a href="../../main_pages/cadastro.php" class="dropdown-item">Criar conta</a>
+                            <a href="../../main_pages/login.php" class="dropdown-item">Fazer Login</a>
                         </div>
                     </li>
                 <?php } else if($ranking == 'com') { ?>
@@ -144,19 +143,10 @@
                             </form>
                         </div>
                     </li>
-                    <?php } ?>
+                <?php } ?>
             </ul>
-
-            <form class="form-inline ml-md-auto" style="margin: auto 0 auto 0;">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <input type="text" class="form-control" placeholder="O que deseja buscar?">
-                    </div>
-                    <div class="input-group-append">
-                        <input type="submit" class="btn btn-success input-group-append" value="Buscar">
-                    </div>
-                </div>
-            </form>
-
+            <div class="ml-md-auto" style="margin: auto 0 auto 0;">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal">Buscar</button>
+            </div>
         </div>
     </nav>
