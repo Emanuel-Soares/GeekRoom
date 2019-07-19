@@ -49,7 +49,7 @@
                         <a href="novel.php" class="nav-link dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Novels</a>
                             <div class="dropdown-menu">
-                                <a href="../main_pages/novels.php" class="dropdown-item">Início</a>
+                                <a href="../main_pages/novel.php" class="dropdown-item">Início</a>
                                 <a href="" class="dropdown-item">Lançamentos</a>
                                 <a href="" class="dropdown-item">Lista</a>
                                 <a href="" class="dropdown-item">Gêneros</a>
@@ -66,7 +66,7 @@
                         <a href="manga.php" class="nav-link dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mangás</a>
                             <div class="dropdown-menu">
-                                <a href="../main_pages/mangas.php" class="dropdown-item">Início</a>
+                                <a href="../main_pages/manga.php" class="dropdown-item">Início</a>
                                 <a href="" class="dropdown-item">Lançamentos</a>
                                 <a href="" class="dropdown-item">Lista</a>
                                 <a href="" class="dropdown-item">Gêneros</a>
@@ -83,7 +83,7 @@
                         <a href="anime.php" class="nav-link dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Animes</a>
                             <div class="dropdown-menu">
-                                <a href="../main_pages/animes.php" class="dropdown-item">Início</a>
+                                <a href="../main_pages/anime.php" class="dropdown-item">Início</a>
                                 <a href="" class="dropdown-item">Lançamentos</a>
                                 <a href="" class="dropdown-item">Lista</a>
                                 <a href="" class="dropdown-item">Gêneros</a>
@@ -100,7 +100,7 @@
                         <a href="filme.php" class="nav-link dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filmes</a>
                             <div class="dropdown-menu">
-                                <a href="../main_pages/filmes.php" class="dropdown-item">Início</a>
+                                <a href="../main_pages/filme.php" class="dropdown-item">Início</a>
                                 <a href="" class="dropdown-item">Lançamentos</a>
                                 <a href="" class="dropdown-item">Lista</a>
                                 <a href="" class="dropdown-item">Gêneros</a>
@@ -117,7 +117,7 @@
                         <a href="hq.php" class="nav-link dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hqs</a>
                             <div class="dropdown-menu">
-                                <a href="../main_pages/hqs.php" class="dropdown-item">Início</a>
+                                <a href="../main_pages/hq.php" class="dropdown-item">Início</a>
                                 <a href="" class="dropdown-item">Lançamentos</a>
                                 <a href="" class="dropdown-item">Lista</a>
                                 <a href="" class="dropdown-item">Gêneros</a>
