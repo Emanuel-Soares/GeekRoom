@@ -7,13 +7,13 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../imagens/returners_magic.jpeg" style="height:400px;" class="d-block w-100" alt="...">
+                <img src="../imagens/mangas/returners_magic.jpeg" style="height:400px;" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="../imagens/sorcerer_king.jpeg" class="d-block w-100" style="height:400px;" alt="...">
+                <img src="../imagens/mangas/sorcerer_king.jpeg" class="d-block w-100" style="height:400px;" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="../imagens/solo_leveling.jpg" class="d-block w-100" style="height:400px;" alt="...">
+                <img src="../imagens/mangas/solo_leveling.jpg" class="d-block w-100" style="height:400px;" alt="...">
             </div>
         </div>
         <a class="carousel-control-prev" href="#slide" role="button" data-slide="prev">
@@ -43,7 +43,7 @@
                             <input type="text" autocomplete="off" onkeyup="showHint(this.value)" id="pesquisa" class="form-control" placeholder="Digite que mangá deseja buscar">
                             <div id="mangas">
                                 <h5 id="titulo" class="lead"></h5><br>
-                                <img id="imgs" src="../imagens/solo_leveling.jpg" style="height:20px;width:20px;display:none;">
+                                <img id="imgs" src="../imagens/mangas/solo_leveling.jpg" style="height:20px;width:20px;display:none;">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -75,7 +75,7 @@
         <div id="rec-mang" class="col-3 bg-darkgray"> <!-- recomendados -->
             <h2 class="lead text-center h2 white">Recomendados</h2><hr>            
             <div class="card" style="width: 100%;">
-                <img style="width:auto;height:200px;" class="card-img-top" src="../imagens/solo_leveling.jpg" alt="Card image cap">
+                <img style="width:auto;height:200px;" class="card-img-top" src="../imagens/mangas/solo_leveling.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Solo Leveling</h5>
                     <p class="card-text">Dez anos atrás, depois do "Portal" que conecta o mundo real com um mundo de monstros se abriu...</p>
@@ -84,7 +84,7 @@
             </div>
             <hr style="margin-bottom:10px;">
             <div class="card" style="width: 100%;">
-                <img style="width:auto;height:200px;" class="card-img-top" src="../imagens/returners_magic.jpeg" alt="Card image cap">
+                <img style="width:auto;height:200px;" class="card-img-top" src="../imagens/mangas/returners_magic.jpeg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Returner's Magic Should Be Special</h5>
                     <p class="card-text">"Agora que estou de volta, não permitirei que aqueles que amo morram outra vez!" O Labirinto Sombrio...</p>
@@ -93,7 +93,7 @@
             </div>
             <hr style="margin-bottom:10px;">
             <div class="card" style="width: 100%;">
-                <img style="width:auto;height:200px;" class="card-img-top" src="../imagens/sorcerer_king.jpeg" alt="Card image cap">
+                <img style="width:auto;height:200px;" class="card-img-top" src="../imagens/mangas/sorcerer_king.jpeg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">I Am The Sorcerer King</h5>
                     <p class="card-text">10 anos atrás, a horda de monstros da fenda formada da distorção do tempo e espaço iniciaram um ataque contra a humanidade...</p>
@@ -102,7 +102,7 @@
             </div>
             <hr style="margin-bottom:10px;">
             <div class="card" style="width: 100%;">
-                <img style="width:auto;height:200px;" class="card-img-top" src="../imagens/solo_leveling.jpg" alt="Card image cap">
+                <img style="width:auto;height:200px;" class="card-img-top" src="../imagens/mangas/solo_leveling.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -111,7 +111,7 @@
             </div>
             <hr style="margin-bottom:10px;">
             <div class="card" style="width: 100%;">
-                <img style="width:auto;height:200px;" class="card-img-top" src="../imagens/solo_leveling.jpg" alt="Card image cap">
+                <img style="width:auto;height:200px;" class="card-img-top" src="../imagens/mangas/solo_leveling.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -120,7 +120,7 @@
             </div>
             <hr style="margin-bottom:10px;">
             <div class="card" style="width: 100%;">
-                <img style="width:auto;height:200px;" class="card-img-top" src="../imagens/solo_leveling.jpg" alt="Card image cap">
+                <img style="width:auto;height:200px;" class="card-img-top" src="../imagens/mangas/solo_leveling.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -135,7 +135,7 @@
 
             <div class="container-fluid">
                 <div class="card bg-dark text-white">
-                    <img class="card-img" style="height:200px;" src="../imagens/solo_leveling.jpg" alt="Card image">
+                    <img class="card-img" style="height:200px;" src="../imagens/mangas/solo_leveling.jpg" alt="Card image">
                     <div class="card-img-overlay card-lanc">
                         <h5 class="card-title">Solo Leveling</h5>
                         <p class="card-text">Dez anos atrás, depois do "Portal" que conecta o mundo real com um mundo de monstros se abriu, algumas pessoas comuns receberam o poder de caçar os monstros do portal. Eles são conhecidos como caçadores...</p>
@@ -144,7 +144,7 @@
                 </div>
                 <hr>
                 <div class="card bg-dark text-white">
-                    <img class="card-img" style="height:200px;" src="../imagens/returners_magic.jpeg" alt="Card image">
+                    <img class="card-img" style="height:200px;" src="../imagens/mangas/returners_magic.jpeg" alt="Card image">
                     <div class="card-img-overlay card-lanc">
                         <h5 class="card-title">A Returners Magic Should Be Special</h5>
                         <p class="card-text">"Agora que estou de volta, não permitirei que aqueles que amo morram outra vez!" O Labirinto Sombrio - A catástrofe mais mortífera que a humanidade tem conhecimento...<p>
@@ -153,7 +153,7 @@
                 </div>
                 <hr>
                 <div class="card bg-dark text-white">
-                    <img class="card-img" style="height:200px;" src="../imagens/sorcerer_king.jpeg" alt="Card image">
+                    <img class="card-img" style="height:200px;" src="../imagens/mangas/sorcerer_king.jpeg" alt="Card image">
                     <div class="card-img-overlay card-lanc">
                         <h5 class="card-title">I Am The Sorcerer King</h5>
                         <p class="card-text">10 anos atrás, a horda de monstros da fenda formada da distorção do tempo e espaço iniciaram um ataque contra a humanidade...<p>
@@ -162,7 +162,7 @@
                 </div>
                 <hr>
                 <div class="card bg-dark text-white">
-                    <img class="card-img" style="height:200px;" src="../imagens/solo_leveling.jpg" alt="Card image">
+                    <img class="card-img" style="height:200px;" src="../imagens/mangas/solo_leveling.jpg" alt="Card image">
                     <div class="card-img-overlay card-lanc">
                         <h5 class="card-title"></h5>
                         <p class="card-text"><p>
@@ -171,7 +171,7 @@
                 </div>
                 <hr>
                 <div class="card bg-dark text-white">
-                    <img class="card-img" style="height:200px;" src="../imagens/solo_leveling.jpg" alt="Card image">
+                    <img class="card-img" style="height:200px;" src="../imagens/mangas/solo_leveling.jpg" alt="Card image">
                     <div class="card-img-overlay card-lanc">
                         <h5 class="card-title"></h5>
                         <p class="card-text"><p>
@@ -180,7 +180,7 @@
                 </div>
                 <hr>
                 <div class="card bg-dark text-white">
-                    <img class="card-img" style="height:200px;" src="../imagens/solo_leveling.jpg" alt="Card image">
+                    <img class="card-img" style="height:200px;" src="../imagens/mangas/solo_leveling.jpg" alt="Card image">
                     <div class="card-img-overlay card-lanc">
                         <h5 class="card-title"></h5>
                         <p class="card-text"><p>

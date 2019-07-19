@@ -34,97 +34,97 @@
             <form method="post" style="margin-top:10px;">
                 <label class="lead float-left" for="add-novel">Adicionar Novel</label>   
                 <button value="add-novel" name="add-novel" id="add-novel" class="btn btn-success btn-circle float-right">
-                    <img src="../imagens/plus-2x.png">
+                    <img src="../imagens/adm/plus-2x.png">
                 </button>
             </form><br><br>
             
             <form method="post">
                 <label for="add-manga" class="lead float-left">Adicionar Mangá</label>
                 <button value="add-manga" name="add-manga" id="add-manga" class="btn btn-success btn-circle float-right">
-                    <img src="../imagens/plus-2x.png">
+                    <img src="../imagens/adm/plus-2x.png">
                 </button>
             </form><br><br>
             
             <form method="post">
                 <label for="add-anime" class="lead float-left">Adicionar Anime</label>
                 <button value="add-anime" name="add-anime" id="add-anime" class="btn btn-success btn-circle float-right">
-                    <img src="../imagens/plus-2x.png">
+                    <img src="../imagens/adm/plus-2x.png">
                 </button>
             </form><br><br>
             
             <form method="post">
                 <label for="add-filme" class="lead float-left">Adicionar Filme</label>
                 <button value="add-filme" name="add-filme" id="add-filme" class="btn btn-success btn-circle float-right">
-                    <img src="../imagens/plus-2x.png">
+                    <img src="../imagens/adm/plus-2x.png">
                 </button>
             </form><br><br>
             
             <form method="post">
                 <label for="add-hq" class="lead float-left">Adicionar HQ</label>
                 <button value="add-hq" name="add-hq" id="add-hq" class="btn btn-success btn-circle float-right">
-                    <img src="../imagens/plus-2x.png">
+                    <img src="../imagens/adm/plus-2x.png">
                 </button>
             </form><br><hr>
             <h2 class="lead text-center h2" style="margin-top:-20px;">Alterar</h2>
             <form method="post">
                 <label for="alt-novel" class="lead float-left">Alterar Novel</label>
                 <button value="alt-novel" name="alt-novel" id="alt-novel" class="btn btn-success btn-circle float-right">
-                    <img src="../imagens/pencil-2x.png">
+                    <img src="../imagens/adm/pencil-2x.png">
                 </button>
             </form><br><br>
             <form method="post">
                 <label for="alt-manga" class="lead float-left">Alterar Mangá</label>
                 <button value="alt-manga" name="alt-manga" id="alt-manga" class="btn btn-success btn-circle float-right">
-                    <img src="../imagens/pencil-2x.png">
+                    <img src="../imagens/adm/pencil-2x.png">
                 </button>
             </form><br><br>
             <form method="post">
                 <label for="alt-anime" class="lead float-left">Alterar Anime</label>
                 <button value="alt-anime" name="alt-anime" id="alt-anime" class="btn btn-success btn-circle float-right">
-                    <img src="../imagens/pencil-2x.png">
+                    <img src="../imagens/adm/pencil-2x.png">
                 </button>
             </form><br><br>
             <form method="post">
                 <label for="alt-filme" class="lead float-left">Alterar Filme</label>
                 <button value="alt-filme" name="alt-filme" id="alt-filme" class="btn btn-success btn-circle float-right">
-                    <img src="../imagens/pencil-2x.png">
+                    <img src="../imagens/adm/pencil-2x.png">
                 </button>
             </form><br><br>
             <form method="post">
                 <label for="alt-hq" class="lead float-left">Alterar HQ</label>
                 <button value="alt-hq" name="alt-hq" id="alt-hq" class="btn btn-success btn-circle float-right">
-                    <img src="../imagens/pencil-2x.png">
+                    <img src="../imagens/adm/pencil-2x.png">
                 </button>
             </form><br><hr>
             <h2 class="lead text-center h2" style="margin-top:-20px;">Enviar</h2>
             <form method="post">
                 <label for="env-filme" class="lead float-left">Enviar Novel</label>
                 <button value="env-filme" name="env-filme" id="env-filme" class="btn btn-success btn-circle float-right">
-                    <img src="../imagens/check-2x.png">
+                    <img src="../imagens/adm/check-2x.png">
                 </button>
             </form><br><br>
             <form method="post">
                 <label for="env-hq" class="lead float-left">Enviar Mangá</label>
                 <button value="env-hq" name="env-hq" id="env-hq" class="btn btn-success btn-circle float-right">
-                    <img src="../imagens/check-2x.png">
+                    <img src="../imagens/adm/check-2x.png">
                 </button>
             </form><br><br>
             <form method="post">
                 <label for="env-filme" class="lead float-left">Enviar Anime</label>
                 <button value="env-filme" name="env-filme" id="env-filme" class="btn btn-success btn-circle float-right">
-                    <img src="../imagens/check-2x.png">
+                    <img src="../imagens/adm/check-2x.png">
                 </button>
             </form><br><br>
             <form method="post">
                 <label for="env-hq" class="lead float-left">Enviar Filme</label>
                 <button value="env-hq" name="env-hq" id="env-hq" class="btn btn-success btn-circle float-right">
-                    <img src="../imagens/check-2x.png">
+                    <img src="../imagens/adm/check-2x.png">
                 </button>
             </form><br><br>
             <form method="post">
                 <label for="env-filme" class="lead float-left">Enviar HQ</label>
                 <button value="env-filme" name="env-filme" id="env-filme" class="btn btn-success btn-circle float-right">
-                    <img src="../imagens/check-2x.png">
+                    <img src="../imagens/adm/check-2x.png">
                 </button>
             </form>
         </div>
@@ -184,57 +184,57 @@
                             <?php } if(isset($_POST['add-novel'])) {?>
                                 <td>
                                     <button class="btn btn-success btn-circle" id="btn-add-novel" name="btn-add-novel">
-                                        <img src="../imagens/plus-2x.png">
+                                        <img src="../imagens/adm/plus-2x.png">
                                     </button>
                                 </td>
                                 <?php } else if(isset($_POST['alt-novel'])) { ?>
                                     <td>
                                         <button class="btn btn-success btn-circle" id="btn-alter-novel" name="btn-alter-novel">
-                                            <img src="../imagens/pencil-2x.png">
+                                            <img src="../imagens/adm/pencil-2x.png">
                                         </button>
                                     </td>
                                 <?php } else if(isset($_POST['add-manga'])) { ?>
                                     <td>
                                         <button class="btn btn-success btn-circle" id="btn-add-manga" name="btn-add-manga">
-                                            <img src="../imagens/plus-2x.png">
+                                            <img src="../imagens/adm/plus-2x.png">
                                         </button>
                                     </td>
                                 <?php } else if(isset($_POST['alt-manga'])) { ?>
                                     <td>
                                         <button class="btn btn-success btn-circle" id="btn-alter-manga" name="btn-alter-manga">
-                                            <img src="../imagens/pencil-2x.png">
+                                            <img src="../imagens/adm/pencil-2x.png">
                                         </button>
                                     </td>
                                 <?php } else if(isset($_POST['add-anime'])) { ?>
                                     <td>
                                         <button class="btn btn-success btn-circle" id="btn-add-anime" name="btn-add-anime">
-                                            <img src="../imagens/plus-2x.png">
+                                            <img src="../imagens/adm/plus-2x.png">
                                         </button>
                                     </td>
                                 <?php } else if(isset($_POST['alt-anime'])) { ?>
                                     <td>
                                         <button class="btn btn-success btn-circle" id="btn-alter-anime" name="btn-alter-anime">
-                                            <img src="../imagens/pencil-2x.png">
+                                            <img src="../imagens/adm/pencil-2x.png">
                                         </button>
                                     </td>
                                 <?php } else if(isset($_POST['add-filme'])) { ?>
                                         <button class="btn btn-success btn-circle" id="btn-add-filme" name="btn-add-filme">
-                                            <img src="../imagens/plus-2x.png">
+                                            <img src="../imagens/adm/plus-2x.png">
                                         </button>
                                 <?php } else if(isset($_POST['alt-filme'])) { ?>
                                         <button class="btn btn-success btn-circle" id="btn-alter-filme" name="btn-alter-filme">
-                                            <img src="../imagens/pencil-2x.png">
+                                            <img src="../imagens/adm/pencil-2x.png">
                                         </button>
                                 <?php } else if(isset($_POST['add-hq'])) { ?>
                                     <td>
                                         <button class="btn btn-success btn-circle" id="btn-add-hq" name="btn-add-hq">
-                                            <img src="../imagens/plus-2x.png">
+                                            <img src="../imagens/adm/plus-2x.png">
                                         </button>
                                     </td>
                                 <?php } else if(isset($_POST['alt-hq'])) { ?>
                                     <td>
                                         <button class="btn btn-success btn-circle" id="btn-alter-hq" name="btn-alter-hq">
-                                            <img src="../imagens/pencil-2x.png">
+                                            <img src="../imagens/adm/pencil-2x.png">
                                         </button>
                                     </td>
                                 <?php } ?>

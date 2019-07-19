@@ -20,7 +20,7 @@
     background-color: #151515 !important;
 }
 .bg-darkgray-2 {
-    background-color: #181818 !important;
+    background-color: #191919 !important;
 }
 .white {
     color: #fff !important;
@@ -44,4 +44,8 @@ a.abc {
 
 a.a {
     margin-left: 0;
+}
+
+.dropdown:hover> .dropdown-menu {
+    display: block !important;
 }

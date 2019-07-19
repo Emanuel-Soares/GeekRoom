@@ -22,22 +22,6 @@
         }
     }
 ?>
-
-<style>
-.bg-darkgray {
-    background-color: #151515 !important;
-}
-.bg-darkgray-2 {
-    background-color: #181818 !important;
-}
-.white {
-    color: #fff !important;
-}
-.dropdown-item:hover {
-    background-color: #e0f2f1 !important;
-}
-</style>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -45,7 +29,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GeekRoom</title>
-    <link rel="stylesheet" type="text/css" href="../../bootstrap/css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="../../css/estilo.css">
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
     <script src="../../bootstrap/js/jquery.js"></script>
     <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -76,17 +60,73 @@
                     <a href="../../main_pages/novel.php" class="nav-link">Novels</a>
                     <?php } ?>
                 </li>
-                <li class="nav-item">
-                    <a href="../../main_pages/mangas.php" class="nav-link">Mangás</a>
+                <li class="nav-item dropdown">
+                    <?php $s->conectarPdo('geekroom', '127.0.0.1', 'root', '');
+                         if($username != 'Conta') { ?>                    
+                        <a href="../../manga.php" class="nav-link dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mangás</a>
+                            <div class="dropdown-menu">
+                            <a href="../../main_pages/manga.php" class="dropdown-item">Início</a>
+                            <a href="../../main_pages/" class="dropdown-item">Lançamentos</a>
+                            <a href="../../main_pages/" class="dropdown-item">Lista</a>
+                            <a href="../../main_pages/" class="dropdown-item">Gêneros</a>
+                            <a href="../../main_pages/" class="dropdown-item">Favoritos</a>
+                            <?php if(!isset($_SESSION['id'])) { ?><a href="../../#" class="dropdown-item">Assinaturas</a><?php } ?>
+                        </div>
+                    <?php } else { ?>
+                    <a href="../../main_pages/manga.php" class="nav-link">Mangás</a>
+                    <?php } ?>
                 </li>
-                <li class="nav-item">
-                    <a href="../../main_pages/animes.php" class="nav-link">Animes</a>
+                <li class="nav-item dropdown">
+                    <?php $s->conectarPdo('geekroom', '127.0.0.1', 'root', '');
+                         if($username != 'Conta') { ?>                    
+                        <a href="../../anime.php" class="nav-link dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Animes</a>
+                            <div class="dropdown-menu">
+                            <a href="../../main_pages/anime.php" class="dropdown-item">Início</a>
+                            <a href="../../main_pages/" class="dropdown-item">Lançamentos</a>
+                            <a href="../../main_pages/" class="dropdown-item">Lista</a>
+                            <a href="../../main_pages/" class="dropdown-item">Gêneros</a>
+                            <a href="../../main_pages/" class="dropdown-item">Favoritos</a>
+                            <?php if(!isset($_SESSION['id'])) { ?><a href="../../#" class="dropdown-item">Assinaturas</a><?php } ?>
+                        </div>
+                    <?php } else { ?>
+                    <a href="../../main_pages/anime.php" class="nav-link">Animes</a>
+                    <?php } ?>
                 </li>
-                <li class="nav-item">
-                    <a href="../../main_pages/filmes.php" class="nav-link">Filmes</a>
+                <li class="nav-item dropdown">
+                    <?php $s->conectarPdo('geekroom', '127.0.0.1', 'root', '');
+                         if($username != 'Conta') { ?>                    
+                        <a href="../../filme.php" class="nav-link dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filmes</a>
+                            <div class="dropdown-menu">
+                            <a href="../../main_pages/filme.php" class="dropdown-item">Início</a>
+                            <a href="../../main_pages/" class="dropdown-item">Lançamentos</a>
+                            <a href="../../main_pages/" class="dropdown-item">Lista</a>
+                            <a href="../../main_pages/" class="dropdown-item">Gêneros</a>
+                            <a href="../../main_pages/" class="dropdown-item">Favoritos</a>
+                            <?php if(!isset($_SESSION['id'])) { ?><a href="../../#" class="dropdown-item">Assinaturas</a><?php } ?>
+                        </div>
+                    <?php } else { ?>
+                    <a href="../../main_pages/filme.php" class="nav-link">Filmes</a>
+                    <?php } ?>
                 </li>
-                <li class="nav-item">
-                    <a href="../../main_pages/hqs.php" class="nav-link">HQs</a>
+                <li class="nav-item dropdown">
+                    <?php $s->conectarPdo('geekroom', '127.0.0.1', 'root', '');
+                         if($username != 'Conta') { ?>                    
+                        <a href="../../hq.php" class="nav-link dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hqs</a>
+                            <div class="dropdown-menu">
+                            <a href="../../main_pages/hq.php" class="dropdown-item">Início</a>
+                            <a href="../../main_pages/" class="dropdown-item">Lançamentos</a>
+                            <a href="../../main_pages/" class="dropdown-item">Lista</a>
+                            <a href="../../main_pages/" class="dropdown-item">Gêneros</a>
+                            <a href="../../main_pages/" class="dropdown-item">Favoritos</a>
+                            <?php if(!isset($_SESSION['id'])) { ?><a href="../../#" class="dropdown-item">Assinaturas</a><?php } ?>
+                        </div>
+                    <?php } else { ?>
+                    <a href="../../main_pages/hq.php" class="nav-link">Hqs</a>
+                    <?php } ?>
                 </li>
                 <li class="nav-item">
                     <a href="../../main_pages/livebook.php" class="nav-link">LiveBook</a>
