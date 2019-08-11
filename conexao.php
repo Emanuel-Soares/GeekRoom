@@ -224,5 +224,23 @@ Class Contas {
         }
     }
 
+    public function gerarArquivo($tit,$tcap,$diretorio,$gerador,$p)
+    {
+        $titulo = str_replace(" ", "-", $tit);
+        $caminho = "../$diretorio/$titulo/";
+        if(is_dir($caminho)){}
+        else { mkdir($caminho); }
+        $c = array();
+        for($i = 1; $i <= $tcap; $i++)
+        {
+            $conteudo = file_get_contents($gerador.'.php');
+            if (is_file("../$diretorio/$titulo/$p-$i.php")):
+                continue;
+            else:
+                file_put_contents('../'.$diretorio.'/'.$titulo.'/'.$p.'-'.$i.'.php', $conteudo);
+            endif;
+        }
+    }
+
 }
 ?>

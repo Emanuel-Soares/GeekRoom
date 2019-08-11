@@ -308,22 +308,24 @@
                     <?php
                     if(isset($_POST['btn-add-manga'])){
                         require('adm_help.php');
+                        $titulo = str_replace(" ", "-",$titulo_manga);
                         for($i = 1; $i <= $caps_manga; $i++)
                         { ?>
                             <tr>
-                                <td><?php echo $titulo_manga; ?></td>
+                                <td><?php echo $titulo; ?></td>
                                 <td><?php echo 'Capítulo '. $i; ?></td>
-                                <td><a href="../mangas/<?php echo $titulo_manga; ?>/<?php echo 'capitulo-'.$i.'.php'; ?>" class="btn btn-link"><?php echo 'Capítulo '. $i; ?></a></td>
+                                <td><a href="../mangas/<?php echo $titulo; ?>/<?php echo 'capitulo-'.$i.'.php'; ?>" class="btn btn-link"><?php echo 'Capítulo '. $i; ?></a></td>
                             </tr>
                         <?php 
                         }}
                         if(isset($_POST['btn-alter-manga'])) {
                         require('adm_help.php');
+                        $titulo = str_replace(" ", "-",$titulo_manga);
                         for($i = 1; $i <= $caps_manga; $i++) { ?>
                             <tr>
-                                <td><?php echo $titulo_manga; ?></td>
+                                <td><?php echo $titulo; ?></td>
                                 <td><?php echo 'Capítulo '. $i; ?></td>
-                                <td><a href="../mangas/<?php echo $titulo_manga; ?>/<?php echo 'capitulo-'.$i.'.php'; ?>" class="btn btn-link"><?php echo 'Capítulo '. $i; ?></a></td>
+                                <td><a href="../mangas/<?php echo $titulo; ?>/<?php echo 'capitulo-'.$i.'.php'; ?>" class="btn btn-link"><?php echo 'Capítulo '. $i; ?></a></td>
                             </tr>
                     <?php }} ?>
                 </tbody>

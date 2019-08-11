@@ -37,7 +37,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-darkgray-2 sticky-top">
-        <a href="index.php" class="navbar-brand">GeekRoom</a>
+        <a href="http://127.0.0.1/GeekRoom/main_pages/" class="navbar-brand">GeekRoom</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,7 +50,7 @@
                         <a href="novel.php" class="nav-link dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Novels</a>
                             <div class="dropdown-menu">
-                            <a href="novel.php" class="dropdown-item">Início</a>
+                            <a href="http://127.0.0.1/GeekRoom/main_pages/novel.php" class="dropdown-item">Início</a>
                             <a href="" class="dropdown-item">Lançamentos</a>
                             <a href="" class="dropdown-item">Lista</a>
                             <a href="" class="dropdown-item">Gêneros</a>
@@ -58,13 +58,13 @@
                             <?php if(!isset($_SESSION['id'])) { ?><a href="#" class="dropdown-item">Assinaturas</a><?php } ?>
                         </div>
                     <?php } else { ?>
-                    <a href="novel.php" class="nav-link">Novels</a>
+                    <a href="http://127.0.0.1/GeekRoom/main_pages/novel.php" class="nav-link">Novels</a>
                     <?php } ?>
                 </li>
                 <li class="nav-item dropdown">
                     <?php $s->conectarPdo('geekroom', '127.0.0.1', 'root', '');
                         if($username != 'Conta') { ?>                    
-                        <a href="manga.php" class="nav-link dropdown-toggle"
+                        <a href="http://127.0.0.1/GeekRoom/main_pages/manga.php" class="nav-link dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mangás</a>
                             <div class="dropdown-menu">
                             <a href="manga.php" class="dropdown-item">Início</a>
@@ -75,7 +75,7 @@
                             <?php if(!isset($_SESSION['id'])) { ?><a href="#" class="dropdown-item">Assinaturas</a><?php } ?>
                         </div>
                     <?php } else { ?>
-                    <a href="manga.php" class="nav-link">Mangás</a>
+                    <a href="http://127.0.0.1/GeekRoom/main_pages/manga.php" class="nav-link">Mangás</a>
                     <?php } ?>
                 </li>
                 <li class="nav-item dropdown">
@@ -84,7 +84,7 @@
                         <a href="anime.php" class="nav-link dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Animes</a>
                             <div class="dropdown-menu">
-                            <a href="anime.php" class="dropdown-item">Início</a>
+                            <a href="http://127.0.0.1/GeekRoom/main_pages/anime.php" class="dropdown-item">Início</a>
                             <a href="" class="dropdown-item">Lançamentos</a>
                             <a href="" class="dropdown-item">Lista</a>
                             <a href="" class="dropdown-item">Gêneros</a>
@@ -92,13 +92,13 @@
                             <?php if(!isset($_SESSION['id'])) { ?><a href="#" class="dropdown-item">Assinaturas</a><?php } ?>
                         </div>
                     <?php } else { ?>
-                    <a href="anime.php" class="nav-link">Animes</a>
+                    <a href="http://127.0.0.1/GeekRoom/main_pages/anime.php" class="nav-link">Animes</a>
                     <?php } ?>
                 </li>
                 <li class="nav-item dropdown">
                     <?php $s->conectarPdo('geekroom', '127.0.0.1', 'root', '');
                         if($username != 'Conta') { ?>                    
-                        <a href="filme.php" class="nav-link dropdown-toggle"
+                        <a href="http://127.0.0.1/GeekRoom/main_pages/filme.php" class="nav-link dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filmes</a>
                             <div class="dropdown-menu">
                             <a href="filme.php" class="dropdown-item">Início</a>
@@ -109,13 +109,13 @@
                             <?php if(!isset($_SESSION['id'])) { ?><a href="#" class="dropdown-item">Assinaturas</a><?php } ?>
                         </div>
                     <?php } else { ?>
-                    <a href="filme.php" class="nav-link">Filmes</a>
+                    <a href="http://127.0.0.1/GeekRoom/main_pages/filme.php" class="nav-link">Filmes</a>
                     <?php } ?>
                 </li>
                 <li class="nav-item dropdown">
                     <?php $s->conectarPdo('geekroom', '127.0.0.1', 'root', '');
                         if($username != 'Conta') { ?>                    
-                        <a href="hq.php" class="nav-link dropdown-toggle"
+                        <a href="http://127.0.0.1/GeekRoom/main_pages/hq.php" class="nav-link dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hqs</a>
                             <div class="dropdown-menu">
                             <a href="hq.php" class="dropdown-item">Início</a>
@@ -126,19 +126,19 @@
                             <?php if(!isset($_SESSION['id'])) { ?><a href="#" class="dropdown-item">Assinaturas</a><?php } ?>
                         </div>
                     <?php } else { ?>
-                    <a href="hq.php" class="nav-link">Hqs</a>
+                    <a href="http://127.0.0.1/GeekRoom/main_pages/hq.php" class="nav-link">Hqs</a>
                     <?php } ?>
                 </li>
                 <li class="nav-item">
-                    <a href="livebook.php" class="nav-link">LiveBook</a>
+                    <a href="http://127.0.0.1/GeekRoom/main_pages/livebook.php" class="nav-link">LiveBook</a>
                 </li>
                 <?php if((!isset($_SESSION['id']) || isset($_POST['sair']))) { ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" style="cursor:pointer;"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $username; ?></a>
                         <div class="dropdown-menu">
-                            <a href="cadastro.php" class="dropdown-item">Criar conta</a>
-                            <a href="login.php" class="dropdown-item">Fazer Login</a>
+                            <a href="http://127.0.0.1/GeekRoom/main_pages/cadastro.php" class="dropdown-item">Criar conta</a>
+                            <a href="http://127.0.0.1/GeekRoom/main_pages/login.php" class="dropdown-item">Fazer Login</a>
                         </div>
                     </li>
                 <?php } else if($ranking == 'com') { ?>
@@ -146,10 +146,10 @@
                     <a class="nav-link dropdown-toggle" style="cursor:pointer;"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $username; ?></a>
                     <div class="dropdown-menu">
-                        <a href="../conta/assinaturas.php" class="dropdown-item">Assinaturas</a>
-                        <a href="../conta/perfil.php" class="dropdown-item">Perfil</a>
-                        <a href="../conta/historico.php" class="dropdown-item">Histórico</a>
-                        <a href="../conta/chats.php" class="dropdown-item">Chats</a>
+                        <a href="http://127.0.0.1/GeekRoom/conta/assinaturas.php" class="dropdown-item">Assinaturas</a>
+                        <a href="http://127.0.0.1/GeekRoom/conta/perfil.php" class="dropdown-item">Perfil</a>
+                        <a href="http://127.0.0.1/GeekRoom/conta/historico.php" class="dropdown-item">Histórico</a>
+                        <a href="http://127.0.0.1/GeekRoom/conta/chats.php" class="dropdown-item">Chats</a>
                         <form method="post">
                             <input type="submit" value="sair" name="sair" class="dropdown-item">
                         </form>
@@ -160,10 +160,10 @@
                     <a class="nav-link dropdown-toggle" style="cursor:pointer;"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $username; ?></a>
                     <div class="dropdown-menu">
-                        <a href="../conta/assinaturas.php" class="dropdown-item">Assinaturas</a>
-                        <a href="../conta/perfil.php" class="dropdown-item">Perfil</a>
-                        <a href="../conta/historico.php" class="dropdown-item">Histórico</a>
-                        <a href="../conta/chats.php" class="dropdown-item">Chats</a>
+                        <a href="http://127.0.0.1/GeekRoom/conta/assinaturas.php" class="dropdown-item">Assinaturas</a>
+                        <a href="http://127.0.0.1/GeekRoom/conta/perfil.php" class="dropdown-item">Perfil</a>
+                        <a href="http://127.0.0.1/GeekRoom/conta/historico.php" class="dropdown-item">Histórico</a>
+                        <a href="http://127.0.0.1/GeekRoom/conta/chats.php" class="dropdown-item">Chats</a>
                         <form method="post">
                             <input type="submit" value="sair" name="sair" class="dropdown-item">
                         </form>
@@ -174,11 +174,11 @@
                     <a class="nav-link dropdown-toggle" style="cursor:pointer;"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $username; ?></a>
                         <div class="dropdown-menu">
-                            <a href="../conta/assinaturas.php" class="dropdown-item">Assinaturas</a>
-                            <a href="../conta/perfil.php" class="dropdown-item">Perfil</a>
-                            <a href="../conta/historico.php" class="dropdown-item">Histórico</a>
-                            <a href="../conta/chats.php" class="dropdown-item">Chats</a>
-                            <a href="../conta/adm.php" class="dropdown-item">Adiministração</a>
+                            <a href="http://127.0.0.1/GeekRoom/conta/assinaturas.php" class="dropdown-item">Assinaturas</a>
+                            <a href="http://127.0.0.1/GeekRoom/conta/perfil.php" class="dropdown-item">Perfil</a>
+                            <a href="http://127.0.0.1/GeekRoom/conta/historico.php" class="dropdown-item">Histórico</a>
+                            <a href="http://127.0.0.1/GeekRoom/conta/chats.php" class="dropdown-item">Chats</a>
+                            <a href="http://127.0.0.1/GeekRoom/conta/adm.php" class="dropdown-item">Adiministração</a>
                             <form method="post" class="form-inline ml-md-auto" style="margin: auto 0 auto 0;">
                                 <input type="submit" value="sair" name="sair" class="dropdown-item">
                             </form>
