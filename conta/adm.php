@@ -9,22 +9,7 @@
     line-height: 1.428571429;
     border-radius: 15px;
 }
-.tab-hide{
-    display: none;
-}
-.tr {
-    display: none;
-}
-.bg-darkgray {
-    background-color: #151515;
-}
-.white {
-    color: #fff;
-}
-.h2 {
-    font-size: 18pt;
-    color: #000;
-}
+
 </style>
 <script src="../js/script.js"></script>
 <div class="container-fluid div">

@@ -17,13 +17,13 @@
 }
 
 .bg-darkgray {
-    background-color: #151515 !important;
+    background-color: #151515;
 }
 .bg-darkgray-2 {
-    background-color: #191919 !important;
+    background-color: #191919;
 }
 .white {
-    color: #fff !important;
+    color: #fff;
 }
 .dropdown-item:hover {
     background-color: #e0f2f1 !important;
@@ -117,4 +117,11 @@ a.a {
         -ms-transform: rotate(360deg);
         transform: rotate(360deg);
     }
+}
+
+.tab-hide{
+    display: none;
+}
+.tr {
+    display: none;
 }
