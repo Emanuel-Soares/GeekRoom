@@ -22,14 +22,13 @@
     color: #fff;
 }
 .h2 {
-    font-size: 18pt !important;
-    color: #000 !important;
+    font-size: 18pt;
+    color: #000;
 }
 </style>
-
+<script src="../js/script.js"></script>
 <div class="container-fluid div">
     <div class="row">
-
         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -523,25 +522,27 @@
                 </tbody>
             </table>
         </div>
+        <div id="preloader" style="display:none">
+            <div id="loader" style="display:none"></div>
+        </div>
     </div>
-<?php if(isset($_POST['add-novel'])) {?><script>$('table.tab-novel').removeClass('tab-hide')</script><?php } ?>
-<?php if(isset($_POST['add-manga'])) {?><script>$('table.tab-manga').removeClass('tab-hide')</script><?php } ?>
-<?php if(isset($_POST['add-anime'])) {?><script>$('table.tab-anime').removeClass('tab-hide')</script><?php } ?>
-<?php if(isset($_POST['add-filme'])) {?><script>$('table.tab-filme').removeClass('tab-hide')</script><?php } ?>
-<?php if(isset($_POST['add-hq'])) {?><script>$('table.tab-hq').removeClass('tab-hide')</script><?php } ?>
+<?php if(isset($_POST['add-novel'])) {?><script>load('#preloader','#loader','.tab-novel','tab-hide')</script><?php } ?>
+<?php if(isset($_POST['add-manga'])) {?><script>load('#preloader','#loader','.tab-manga','tab-hide')</script><?php } ?>
+<?php if(isset($_POST['add-anime'])) {?><script>load('#preloader','#loader','.tab-anime','tab-hide')</script><?php } ?>
+<?php if(isset($_POST['add-filme'])) {?><script>load('#preloader','#loader','.tab-filme','tab-hide')</script><?php } ?>
+<?php if(isset($_POST['add-hq'])) {?><script>load('#preloader','#loader','.tab-hq','tab-hide')</script><?php } ?>
 
-<?php if(isset($_POST['alt-novel'])) {?><script>$('table.tab-novel').removeClass('tab-hide')</script><?php } ?>
-<?php if(isset($_POST['alt-manga'])) {?><script>$('table.tab-manga').removeClass('tab-hide')</script><?php } ?>
-<?php if(isset($_POST['alt-anime'])) {?><script>$('table.tab-anime').removeClass('tab-hide')</script><?php } ?>
-<?php if(isset($_POST['alt-filme'])) {?><script>$('table.tab-filme').removeClass('tab-hide')</script><?php } ?>
-<?php if(isset($_POST['alt-hq'])) {?><script>$('table.tab-hq').removeClass('tab-hide')</script><?php } ?>
+<?php if(isset($_POST['alt-novel'])) {?><script>load('#preloader','#loader','.tab-novel','tab-hide')</script><?php } ?>
+<?php if(isset($_POST['alt-manga'])) {?><script>load('#preloader','#loader','.tab-manga','tab-hide')</script><?php } ?>
+<?php if(isset($_POST['alt-anime'])) {?><script>load('#preloader','#loader','.tab-anime','tab-hide')</script><?php } ?>
+<?php if(isset($_POST['alt-filme'])) {?><script>load('#preloader','#loader','.tab-filme','tab-hide')</script><?php } ?>
+<?php if(isset($_POST['alt-hq'])) {?><script>load('#preloader','#loader','.tab-hq','tab-hide')</script><?php } ?>
 
 <?php if(isset($_POST['env-novel'])) { require('adm_help.php'); } ?>
 <?php if(isset($_POST['env-manga'])) { require('adm_help.php'); } ?>
 <?php if(isset($_POST['env-anime'])) { require('adm_help.php'); } ?>
 <?php if(isset($_POST['env-filme'])) { require('adm_help.php'); } ?>
 <?php if(isset($_POST['env-hq'])) { require('adm_help.php'); } ?>
-
 
 <script>
     let clicks = 0;

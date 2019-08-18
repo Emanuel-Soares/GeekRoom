@@ -1,6 +1,6 @@
 <?php
 require_once('../header_manga.php');
-$titulo = 'Título';
+$titulo = $_SESSION['titulo'];
 $totalCapitulos = 1;
 $capitulo = 1;
 ?>

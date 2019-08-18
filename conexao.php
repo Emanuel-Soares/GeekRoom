@@ -63,7 +63,7 @@ Class Contas {
         if($sql->rowCount() > 0) {
             return false;
         } else {
-            $sql = $pdo->prepare("INSERT INTO cadastro VALUES (DEFAULT, :u, :n, :s, :e, DEFAULT, DEFAULT)");
+            $sql = $pdo->prepare("INSERT INTO cadastro VALUES (DEFAULT, :u, :n, :s, :e, DEFAULT, NOW())");
             $sql->bindValue(":u",$user);
             $sql->bindValue(":n",$nome);
             $sql->bindValue(":s",MD5($senha));
@@ -233,6 +233,7 @@ Class Contas {
         $c = array();
         for($i = 1; $i <= $tcap; $i++)
         {
+            $_SESSION['titulo'] = $tit; 
             $conteudo = file_get_contents($gerador.'.php');
             if (is_file("../$diretorio/$titulo/$p-$i.php")):
                 continue;
